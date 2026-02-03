@@ -28,50 +28,128 @@
       </div>
     </div>
   </nav>
+  <!--  Zorayda 03/feb -->
   <main class="container my-4">
-    <h2 class="section-title mb-1">Página de contacto</h2>
-    <div class="section-subtitle mb-4">Te respondemos lo más rápido posible</div>
-    <div class="row g-3">
-      <div class="col-12 col-lg-6">
-        <div class="card p-4">
-          <form class="needs-validation" novalidate="">
-            <div class="mb-3">
-              <label class="form-label">Nombre</label>
-              <input class="form-control" required=""/>
-              <div class="invalid-feedback">Pon tu nombre.</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Correo</label>
-              <input class="form-control" required="" type="email"/>
-              <div class="invalid-feedback">Pon un correo válido.</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Asunto</label>
-              <input class="form-control" required=""/>
-              <div class="invalid-feedback">Pon un asunto.</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Mensaje</label>
-              <textarea class="form-control" required="" rows="5"></textarea>
-              <div class="invalid-feedback">Escribe tu mensaje.</div>
-            </div>
-            <button class="btn btn-mixe" type="submit">Enviar</button>
-          </form>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="card p-4 h-100">
-          <h5 class="fw-bold mb-3">Información de contacto</h5>
-          <div class="mb-2"><span class="tag">Correo</span> contacto@mixeartesanias.com</div>
-          <div class="mb-2"><span class="tag">Teléfono</span> +52 999 000 0000</div>
-          <div class="mb-4"><span class="tag">Ubicación</span> Mérida, Yucatán</div>
-          <div class="small text-secondary">
-            (Si quieres, aquí luego metemos links reales a Facebook/WhatsApp/Instagram.)
+  <h2 class="section-title mb-1">Página de contacto</h2>
+  <div class="section-subtitle mb-4">Te respondemos lo más rápido posible</div>
+
+  <div class="row g-3">
+    <div class="col-12 col-lg-6">
+      <div class="card p-4">
+        <form id="contactForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input id="name" name="name" class="form-control" required placeholder="Tu nombre completo" aria-required="true" />
+            <div class="invalid-feedback">Pon tu nombre.</div>
           </div>
+
+           <div class="mb-3">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input id="telefono" name="telefono" class="form-control" required type="telefono" placeholder="+529990000" aria-required="true" />
+            <div class="invalid-feedback">Pon un telefono válido.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo</label>
+            <input id="email" name="email" class="form-control" required type="email" placeholder="tucorreo@ejemplo.com" aria-required="true" />
+            <div class="invalid-feedback">Pon un correo válido.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="subject" class="form-label">Asunto</label>
+            <input id="subject" name="subject" class="form-control" required placeholder="¿Sobre qué quieres escribir?" />
+            <div class="invalid-feedback">Pon un asunto.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea id="message" name="message" class="form-control" required rows="5" placeholder="Cuéntanos los detalles..." aria-required="true"></textarea>
+            <div class="invalid-feedback">Escribe tu mensaje.</div>
+            <div class="form-text">Máx. 1000 caracteres.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="attachment" class="form-label">Adjuntar archivo (opcional)</label>
+            <input id="attachment" name="attachment" class="form-control" type="file" accept=".png,.jpg,.pdf,.zip" />
+            <div class="form-text">PNG/JPG/PDF. Máx 5MB.</div>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            <button id="submitBtn" class="btn btn-mixe" type="submit">Enviar</button>
+            <div id="formStatus" class="small text-success visually-hidden">Mensaje enviado. Gracias </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <div class="card p-4 h-100">
+        <h5 class="fw-bold mb-3">Información de contacto</h5>
+
+        <div class="mb-2">
+          <span class="tag">Correo</span>
+          <a href="mailto:contacto@mixaartesanias.com" class="ms-2">contacto@mixaartesanias.com</a>
+        </div>
+
+        <div class="mb-2">
+          <span class="tag">Teléfono</span>
+          <a href="tel:+525554268000" class="ms-2">+52 55 54 26 8000</a>
+          <a href="https://wa.me/525554268000" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm ms-2">WhatsApp</a>
+        </div>
+
+        <div class="mb-3">
+          <span class="tag">Ubicación</span>
+          <span class="ms-2">Ciudad de México, México</span>
+        </div>
+
+        <div class="mb-3 small text-secondary">
+          Síguenos:
+          <a href="#" class="ms-2" aria-label="Instagram">Instagram</a> |
+          <a href="#" class="ms-1" aria-label="Facebook">Facebook</a> |
+          <a href="#" class="ms-1" aria-label="TikTok">TikTok</a>
+        </div>
+
+        <div class="mt-3">
+          <iframe
+            title="Mapa - MIXE | Artesanías"
+            src="https://www.google.com/maps?q=Ciudad+de+México&output=embed"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
-  </main>
+  </div>
+
+  <!-- Se puede mover al js -->
+  <script>
+    (function () {
+      'use strict';
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar';
+          status.classList.remove('visually-hidden');
+          form.reset();
+          form.classList.remove('was-validated');
+          setTimeout(() => status.classList.add('visually-hidden'), 4000);
+        }, 1200);
+      });
+    })();
+  </script>
+</main>
+
   <footer class="mt-5 py-4">
     <div class="container small d-flex justify-content-between flex-wrap gap-2">
       <div>© MIXE | ARTESANÍAS</div>
