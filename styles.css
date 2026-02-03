@@ -1,0 +1,46 @@
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #000000 !important;
+}
+
+/*.navbar
+{    
+  
+    background: linear-gradient(
+    90deg,
+    #E4007C,
+    #e7b3d0,
+    #00A36C
+  );
+    
+} */
+
+.navbar {
+  background:
+    linear-gradient(90deg, #E4007C, #e7b3d0, #00A36C),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+    font-weight: 500;
+}
+
+
+.nav-link {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.nav-link:hover {
+  color: #E4007C; 
+}
+
+.navbar-toggler{
+  color:#000000;
+
+}
