@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Teodoro D. A. Charles Maldonado",
+    "role": "Desarrollador Backend",
+    "description": "Organización, redacción y bases de datos; fortalece el backend.",
+    "image": "/img/Teo.jpeg",
+    "alt": "Foto Teodoro"
+  },
+  {
+    "name": "Ma. de los Ángeles Pedraza Salmeron",
+    "role": "Desarrolladora",
+    "description": "Investigación, comunicación y presentaciones; detallista, asegura calidad en entregas.",
+    "image": "/img/Angeles.jpeg",
+    "alt": "Foto Ángeles"
+  },
+  {
+    "name": "Israel Rivera López Bolaños",
+    "role": "Desarrollador",
+    "description": "Experiencia SCRUM, presentaciones; frontend, backend y testing para agilidad.",
+    "image": "/img/Isra.jpeg",
+    "alt": "Foto Israel"
+  },
+  {
+    "name": "Iván Arrieta Ortega",
+    "role": "Desarrollador",
+    "description": "Trabajo en equipo, comunicación y datos; fortalece procesos del proyecto.",
+    "image": "/img/Ivan.jpeg",
+    "alt": "Foto Iván"
+  },
+  {
+    "name": "Jade Adeliz Terrazas Soto",
+    "role": "Desarrolladora",
+    "description": "Detallista y organizada; documentación clara y procesos ordenados.",
+    "image": "/img/Jade.jpeg",
+    "alt": "Foto Jade"
+  },
+  {
+    "name": "Jonathan Pacheco Agraz",
+    "role": "Desarrollador",
+    "description": "Trabaja bajo presión, cumple tiempos y escucha activamente para colaborar.",
+    "image": "/img/Jony.jpeg",
+    "alt": "Foto Jonathan"
+  },
+  {
+    "name": "Felipe Ernesto Yañez Sandoval",
+    "role": "Desarrollador",
+    "description": "Investigación, datos y documentación; Python y comunicación mejoran el análisis.",
+    "image": "/img/Felipe.jpeg",
+    "alt": "Foto Felipe"
+  },
+  {
+    "name": "Esteban Rafael Mercado Medina",
+    "role": "Desarrollador",
+    "description": "Versátil, comunicación asertiva; backend, redacción y documentación técnica.",
+    "image": "/img/Esteban.jpeg",
+    "alt": "Foto Esteban"
+  },
+  {
+    "name": "Leslie Donaji Rivera Olivares",
+    "role": "Desarrolladora",
+    "description": "Comunica bien, colabora y aprende rápido; se adapta a desafíos.",
+    "image": "/img/Leslie.jpeg",
+    "alt": "Foto Leslie"
+  },
+  {
+    "name": "Zorayda Gutiérrez",
+    "role": "Desarrolladora Frontend",
+    "description": "Especialista en investigación, coordinación y frontend.",
+    "image": "/img/Zorayda.jpeg",
+    "alt": "Foto Zorayda"
+  }
+]
