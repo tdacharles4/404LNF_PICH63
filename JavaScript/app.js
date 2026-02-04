@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.blur();
     });
   });
-
++
   // Filtro rápido del catálogo (por texto)
   const search = document.querySelector("#catalogSearch");
   if (search) {
@@ -43,15 +43,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Validación Bootstrap forms
-  document.querySelectorAll(".needs-validation").forEach(form => {
-    form.addEventListener("submit", (e) => {
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
+ document.querySelectorAll(".needs-validation").forEach(form => {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // siempre prevenir para controlar el flujo
+
+    if (!form.checkValidity()) {
+      e.stopPropagation();
       form.classList.add("was-validated");
+      return; // si falla validación, no enviar
+    }
+
+    form.classList.add("was-validated");
+
+    // Envío a Formspree
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
     });
+
+    const status = document.getElementById("formStatus");
+    if (response.ok) {
+      status.textContent = "¡Mensaje enviado con éxito!";
+      status.classList.remove("visually-hidden");
+      form.reset();
+      form.classList.remove("was-validated");
+    } else {
+      status.textContent = "Hubo un error al enviar.";
+      status.classList.remove("visually-hidden");
+    }
   });
+});
+
 
   // Cargar miembros de equipo
   loadTeamMembers();
