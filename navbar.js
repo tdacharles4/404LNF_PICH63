@@ -1,9 +1,12 @@
+//const contact = "/pages/Contact.html";
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = `
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     
-    <a class="navbar-brand" href="#">MIXA | ARTESANÍAS</a>
+    <a class="navbar-brand" href="#pages/Index.html">MIXA | ARTESANÍAS</a>
 
     <!-- Íconos -->
     <div class="d-flex align-items-center order-lg-3">
@@ -31,11 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Menú -->
     <div class="collapse navbar-collapse order-lg-1" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
-        <a class="nav-link active" href="#">Inicio</a>
-        <a class="nav-link" href="#">Productos</a>
-        <a class="nav-link" href="#">Ofertas</a>
-        <a class="nav-link" href="#">Contacto</a>
-        <a class="nav-link" href="#">Acerca de</a>
+        <a class="nav-link active" href="/pages/Index.html">Inicio</a>
+        <a class="nav-link" href="/pages/Products.html"></a>
+        <!--<a class="nav-link" href="#">Ofertas</a>-->
+        <a class="nav-link" href="/pages/Contact.html">Contacto</a>
+        <a class="nav-link" href="/pages/AboutUs.html">Acerca de</a>
       </div>
     </div>
 
