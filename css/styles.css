@@ -359,14 +359,29 @@ body{
 /* Footer */
 footer{
   background: var(--text);
-  color: #fff;
+  color: var(--text);
+  background-color: #E0E0E0;
 }
 footer a{
-  color: #cfcfcf;
-  text-decoration: none;
+  color: var(--text);
+  text-decoration: none; 
 }
+
+footer h5{
+  color: var(--green);
+  text-transform: uppercase;
+  font-weight: 800
+}
+
+footer h5:hover{
+  color: var(--pink);
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: 800
+}
+
 footer a:hover{
-  color: #fff;
+  color: var(--pink);
   text-decoration: underline;
 }
 
