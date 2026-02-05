@@ -373,8 +373,29 @@ footer a:hover{
 /* Formularios */
 .form-control:focus{
   border-color: var(--green);
-  box-shadow: 0 0 0 .2rem rgba(0,168,107,.15);
+  box-shadow: 0 0 0 .2rem rgba(105, 194, 140, 0.895);
 }
+ .form-label {
+  color: var(--pink); 
+  font-weight: 800; 
+}
+
+
+#contactForm{
+  background-color: var(--soft);
+  padding: 1rem;
+  border-radius: 8px;
+}
+#submitBtn{
+  background-color: var(--green);
+}
+#attachment{
+  background-color: var(--green);
+}
+
+
+
+
 
 /* Chips / etiquetas */
 .tag{

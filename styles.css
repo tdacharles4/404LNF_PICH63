@@ -1,31 +1,8 @@
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #000000 !important;
-}
-
-/*.navbar
-{    
-  
-    background: linear-gradient(
-    90deg,
-    #E4007C,
-    #e7b3d0,
-    #00A36C
-  );
-    
-} */
-
 .navbar {
-  background:
-    linear-gradient(90deg, #E4007C, #e7b3d0, #00A36C),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0.04) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+  background-image: url("/img/navbarBG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
     font-weight: 500;
 }
 
@@ -44,18 +21,6 @@
   color:#000000;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* HERO / CARRUSEL MIXA*/
 
@@ -143,4 +108,12 @@
   #heroCarousel .carousel-caption p {
     display: none;
   }
+}
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-brand img {
+  display: block;
+  height: 70px;
 }
