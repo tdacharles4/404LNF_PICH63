@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.blur();
     });
   });
-+
+
   // Filtro rápido del catálogo (por texto)
   const search = document.querySelector("#catalogSearch");
   if (search) {
@@ -86,7 +86,7 @@ async function loadTeamMembers() {
   if (!container) return;
 
   try {
-    const response = await fetch("/data/team.json");
+    const response = await fetch("../data/team.json");
     const members = await response.json();
     container.innerHTML = members.map(member => `
       <div class="col">

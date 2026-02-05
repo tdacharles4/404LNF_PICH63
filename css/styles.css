@@ -452,6 +452,12 @@ footer a:hover{
   justify-content: center;
 }
 
+.flip-card-front .avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
 .flip-card-front {
   background: #fff;
 }
