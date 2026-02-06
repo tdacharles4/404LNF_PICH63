@@ -390,26 +390,62 @@ footer a:hover{
   border-color: var(--green);
   box-shadow: 0 0 0 .2rem rgba(105, 194, 140, 0.895);
 }
+
+/*Texto dentro del formulario*/
  .form-label {
   color: var(--pink); 
   font-weight: 800; 
 }
 
-
+/*Color del formulario*/
 #contactForm{
   background-color: var(--soft);
   padding: 1rem;
   border-radius: 8px;
 }
+
+/*Color del boton del formulario*/
 #submitBtn{
-  background-color: var(--green);
+  background-color: var(--blanco);
+  color: var(--negro);
 }
+#submitBtn:hover{
+  background-color: var(--green);
+  color: var(--blanco);
+}
+
+
 #attachment{
-  background-color: var(--green);
+  background-color: var(--blanco);
 }
 
+/*Botón de la pagina de registro*/
 
-
+#PaginaRegistro{
+  background-color: var(--soft);
+  padding: 1rem;
+  border-radius: 8px;
+}
+#BotonF{
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-color: var(--pink);
+}
+#BotonF:hover{
+  background-color: var(--green);
+  color: var(--blanco);
+  border-color: var(--green);
+}
+#BotonF2{
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-color: var(--pink);
+}
+#BotonF2:hover{
+  background-color: var(--green);
+  color: var(--blanco);
+  border-color: var(--green);
+}
 
 
 /* Chips / etiquetas */
