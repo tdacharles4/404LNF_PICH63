@@ -1,31 +1,8 @@
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #000000 !important;
-}
-
-/*.navbar
-{    
-  
-    background: linear-gradient(
-    90deg,
-    #E4007C,
-    #e7b3d0,
-    #00A36C
-  );
-    
-} */
-
 .navbar {
-  background:
-    linear-gradient(90deg, #E4007C, #e7b3d0, #00A36C),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0.04) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+  background-image: url("/img/navbarBG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
     font-weight: 500;
 }
 
@@ -43,4 +20,100 @@
 .navbar-toggler{
   color:#000000;
 
+}
+
+/* HERO / CARRUSEL MIXA*/
+
+#heroCarousel .carousel-item img {
+  height: 420px;             
+  width: 100%;
+  object-fit: cover;         
+}
+
+/*botones*/
+
+/* Botón principal (rosa) */
+.btn-mixe {
+  background-color: #e83e8c;
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+/* Hover del botón principal */
+.btn-mixe:hover {
+  background-color: #e83e8c; /* mantiene color vivo */
+  color: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgba(232, 62, 140, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Botón secundario (outline) */
+.btn-outline-mixe {
+  background-color: #e83e8c;
+  color: #ffffff;
+  border: 2px solid #e83e8c;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+/* Hover con realce visible */
+.btn-outline-mixe:hover {
+  background-color: #e83e8c;
+  color: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgba(232, 62, 140, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Iconos/flechas */
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-size: 60%;
+}
+
+/* Área clickeable */
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  width: 12%;
+}
+
+/* Hover sutil */
+#heroCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+#heroCarousel .carousel-indicators [data-bs-target] {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#heroCarousel .carousel-indicators .active {
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  #heroCarousel .carousel-item img {
+    height: 300px;
+  }
+
+  #heroCarousel .carousel-caption {
+    padding: 1.25rem;
+  }
+
+  #heroCarousel .carousel-caption p {
+    display: none;
+  }
+}
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-brand img {
+  display: block;
+  height: 70px;
 }
