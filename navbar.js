@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="container-fluid">
     
     <a class="navbar-brand" href="/pages/Index.html">
-        <img src="../img/Logo_horizontal.svg" alt="MIXA | Artesanías" height="40">
+        <img src="../img/logo/Logo_horizontal.svg" alt="MIXA | Artesanías" height="40">
     </a>
 
     <!-- Íconos -->
