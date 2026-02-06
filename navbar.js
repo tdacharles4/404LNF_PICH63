@@ -1,16 +1,15 @@
-//const contact = "/pages/Contact.html";
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = `
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     
-    <a class="navbar-brand" href="#pages/Index.html">MIXA | ARTESANÍAS</a>
+    <a class="navbar-brand" href="/pages/Index.html">
+        <img src="../img/Logo_horizontal.svg" alt="MIXA | Artesanías" height="40">
+    </a>
 
     <!-- Íconos -->
     <div class="d-flex align-items-center order-lg-3">
-      <a href="#" class="nav-link me-3 position-relative">
+      <a href="/pages/Login.html" class="nav-link me-3 position-relative">
         <i class="fa-regular fa-user fs-5"></i>
       </a>
 
@@ -34,11 +33,27 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Menú -->
     <div class="collapse navbar-collapse order-lg-1" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
-        <a class="nav-link active" href="/pages/Index.html">Inicio</a>
-        <a class="nav-link" href="/pages/Products.html"></a>
-        <!--<a class="nav-link" href="#">Ofertas</a>-->
+        <a class="nav-link" href="/pages/Index.html">Inicio</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+            href="/pages/Products.html"
+            id="navbarDropdown"
+            role="button"
+            aria-expanded="false">
+            Productos
+          </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Textiles</a></li>
+                                <li><a class="dropdown-item" href="#!">Cerámica</a></li>
+                                <li><a class="dropdown-item" href="#!">Joyería</a></li>
+                                <li><a class="dropdown-item" href="#!">Alebrijes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
         <a class="nav-link" href="/pages/Contact.html">Contacto</a>
         <a class="nav-link" href="/pages/AboutUs.html">Acerca de</a>
+        <a class="nav-link" href="/pages/SignUp.html">Registro</a>
+
       </div>
     </div>
 
