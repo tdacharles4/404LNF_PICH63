@@ -9,6 +9,8 @@
   <!-- Bootstrap CSS -->
     <script src="../navbar.js" defer></script>
     <script src="/src/layouts/Footer.js"></script>
+    <script defer type="module" src="/src/layouts/Carrito.js"></script>
+    <script defer type="module" src="../JavaScript/app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link href="../css/styles.css" rel="stylesheet"/>
@@ -17,6 +19,10 @@
   
   <!-- NAVBAR -->
   <div id="navbar"></div>
+
+  <!--Carrito 06/02-->
+  <shopping-cart></shopping-cart>
+  <!--Carrito 06/02-->
 
   <main class="container my-4">
     <!-- Carrusel -->
@@ -114,7 +120,14 @@
               <div class="muted mb-2">Oaxaca · Madera</div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="price">$450</div>
-                <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir al carrito</button>
+                <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                    <span class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </span>
+                    <span class="cart-text">Add to cart</span>
+                </button>
               </div>
             </div>
           </div>
@@ -127,7 +140,14 @@
               <div class="muted mb-2">Puebla · Cerámica</div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="price">$650</div>
-                <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir al carrito</button>
+                <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                    <span class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </span>
+                    <span class="cart-text">Add to cart</span>
+                </button>
               </div>
             </div>
           </div>
@@ -140,7 +160,14 @@
               <div class="muted mb-2">Chiapas · Textil</div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="price">$320</div>
-                <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir al carrito</button>
+                <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                    <span class="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </span>
+                    <span class="cart-text">Add to cart</span>
+                </button>
               </div>
             </div>
           </div>
@@ -186,7 +213,14 @@
             <div class="muted">Michoacán · Cestería</div>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <div class="price">$180</div>
-              <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir</button>
+              <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                  <span class="cart-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
+                  </span>
+                  <span class="cart-text">Add to cart</span>
+              </button>
             </div>
           </div>
         </div>
@@ -199,7 +233,14 @@
             <div class="muted">Jalisco · Joyería</div>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <div class="price">$290</div>
-              <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir</button>
+              <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                  <span class="cart-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
+                  </span>
+                  <span class="cart-text">Add to cart</span>
+              </button>
             </div>
           </div>
         </div>
@@ -212,7 +253,14 @@
             <div class="muted">Oaxaca · Cerámica</div>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <div class="price">$210</div>
-              <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir</button>
+              <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                  <span class="cart-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
+                  </span>
+                  <span class="cart-text">Add to cart</span>
+              </button>
             </div>
           </div>
         </div>
@@ -225,7 +273,14 @@
             <div class="muted">Oaxaca · Madera</div>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <div class="price">$240</div>
-              <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir</button>
+              <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                  <span class="cart-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
+                  </span>
+                  <span class="cart-text">Add to cart</span>
+              </button>
             </div>
           </div>
         </div>
@@ -238,7 +293,14 @@
             <div class="muted">Puebla · Cerámica</div>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <div class="price">$520</div>
-              <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir</button>
+              <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                  <span class="cart-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
+                  </span>
+                  <span class="cart-text">Add to cart</span>
+              </button>
             </div>
           </div>
         </div>
@@ -251,7 +313,14 @@
             <div class="muted">Chiapas · Textil</div>
             <div class="d-flex justify-content-between align-items-center mt-2">
               <div class="price">$480</div>
-              <button class="btn btn-mixe btn-sm" data-add-to-cart="">Añadir</button>
+              <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                  <span class="cart-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
+                  </span>
+                  <span class="cart-text">Add to cart</span>
+              </button>
             </div>
           </div>
         </div>
