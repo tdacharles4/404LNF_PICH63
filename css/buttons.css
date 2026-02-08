@@ -1,0 +1,24 @@
+/* BUTTONS */
+.btn-brand {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-brand:hover {
+    filter: brightness(.95);
+    color: #fff;
+}
+
+.btn-outline-brand {
+    color: var(--pink);
+    border-color: var(--pink);
+    font-weight: 700;
+}
+
+.btn-outline-brand:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: #fff;
+}

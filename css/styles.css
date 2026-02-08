@@ -1,3 +1,8 @@
+@import "navbar.css";
+@import "buttons.css";
+@import "footer.css";
+@import "flip-cards.css";
+
 :root{
   --pink: #e4007c;       /* barra superior */
   --green: #00a36c;      /* menú */
@@ -76,31 +81,6 @@ body{
 }
 
 .story-subtitle{ max-width: 780px; }
-
-/* BUTTONS */
-.btn-brand{
-  background: var(--pink);
-  border-color: var(--pink);
-  color: #fff;
-  font-weight: 700;
-}
-
-.btn-brand:hover{
-  filter: brightness(.95);
-  color: #fff;
-}
-
-.btn-outline-brand{
-  color: var(--pink);
-  border-color: var(--pink);
-  font-weight: 700;
-}
-
-.btn-outline-brand:hover{
-  background: var(--pink);
-  border-color: var(--pink);
-  color: #fff;
-}
 
 /* BLOBS (NO RECTANGULAR) */
 .blob-wrap{
@@ -283,35 +263,6 @@ body{
   background: #f6f6f6;
 }
 
-/* Navbar */
-.navbar-mixe{
-  background: linear-gradient(90deg, var(--pink), #c3006a);
-}
-.navbar-mixe .navbar-brand,
-.navbar-mixe .nav-link{
-  color: #fff !important;
-}
-.navbar-mixe .nav-link.active{
-  font-weight: 700;
-  text-decoration: underline;
-}
-.navbar-mixe .nav-link:hover{
-  opacity: .9;
-}
-.navbar-mixe .badge{
-  background: var(--green);
-  color: var(--text);
-}
-
-.subnav{
-  background: var(--green);
-}
-.subnav .nav-link{
-  color: #fff !important;
-  opacity: .95;
-}
-.subnav .nav-link:hover{ opacity: 1; }
-
 /* Botones */
 .btn-mixe{
   background: var(--pink);
@@ -356,34 +307,7 @@ body{
   color: var(--green-dark);
 }
 
-/* Footer */
-footer{
-  background: var(--text);
-  color: var(--text);
-  background-color: #E0E0E0;
-}
-footer a{
-  color: var(--text);
-  text-decoration: none; 
-}
 
-footer h5{
-  color: var(--green);
-  text-transform: uppercase;
-  font-weight: 800
-}
-
-footer h5:hover{
-  color: var(--pink);
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-weight: 800
-}
-
-footer a:hover{
-  color: var(--pink);
-  text-decoration: underline;
-}
 
 /* Formularios */
 .form-control:focus{
@@ -484,59 +408,6 @@ footer a:hover{
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 12px 30px rgba(17,17,17,.08);
-}
-
-.team-flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 280px;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.team-flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 38px;
-  background: #fff;
-  border: 8px solid rgba(10,160,110,.10);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.flip-card-front .avatar {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1rem;
-}
-
-.flip-card-front {
-  background: #fff;
-}
-
-.flip-card-back {
-  background: #fff;
-  transform: rotateY(180deg);
 }
 
 #nuestra-esencia {
