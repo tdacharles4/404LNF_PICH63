@@ -10,20 +10,8 @@
     font-weight: 800;
 }
 
-/*Color del formulario*/
-#contactForm {
+.needs-validation{
     background-color: var(--soft);
     padding: 1rem;
     border-radius: 8px;
-}
-
-/*Color del boton del formulario*/
-#submitBtn {
-    background-color: var(--blanco);
-    color: var(--negro);
-}
-
-#submitBtn:hover {
-    background-color: var(--green);
-    color: var(--blanco);
 }

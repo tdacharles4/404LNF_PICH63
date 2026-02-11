@@ -272,34 +272,6 @@ body{
   background-color: var(--blanco);
 }
 
-/*Botón de la pagina de registro*/
-
-#PaginaRegistro{
-  background-color: var(--soft);
-  padding: 1rem;
-  border-radius: 8px;
-}
-#BotonF{
-  background-color: var(--blanco);
-  color: var(--negro);
-  border-color: var(--pink);
-}
-#BotonF:hover{
-  background-color: var(--green);
-  color: var(--blanco);
-  border-color: var(--green);
-}
-#BotonF2{
-  background-color: var(--blanco);
-  color: var(--negro);
-  border-color: var(--pink);
-}
-#BotonF2:hover{
-  background-color: var(--green);
-  color: var(--blanco);
-  border-color: var(--green);
-}
-
 
 /* Chips / etiquetas */
 .tag{
