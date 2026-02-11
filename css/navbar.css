@@ -34,3 +34,37 @@
 .subnav .nav-link:hover {
     opacity: 1;
 }
+
+/* Del otro .css (Comentario temporal) */
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar-brand img {
+    display: block;
+    height: 70px;
+}
+
+.navbar {
+    background-image: url("/img/navbarBG.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-weight: 700;
+}
+
+
+.nav-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #E4007C;
+}
+
+.navbar-toggler {
+    color: #000000;
+}

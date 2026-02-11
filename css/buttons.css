@@ -45,14 +45,19 @@
 
 /* Botones */
 .btn-mixe {
-    background: var(--pink);
-    color: #fff;
+    background-color: var(--pink);
+    color: #ffffff;
     border: none;
+    font-weight: 500;
+    transition: all 0.25s ease;
 }
 
 .btn-mixe:hover {
-    filter: brightness(.95);
-    color: #fff;
+    background-color: #e83e8c;
+    /* mantiene color vivo */
+    color: #ffffff;
+    box-shadow: 0 0.5rem 1rem rgba(232, 62, 140, 0.35);
+    transform: translateY(-1px);
 }
 
 .btn-outline-mixe {
@@ -60,17 +65,13 @@
     color: var(--negro);
     background: transparent;
     font-weight: 500;
-  transition: all 0.25s ease;
+    transition: all 0.25s ease;
 }
 
 .btn-outline-mixe:hover {
     background: var(--green);
     color: var(--blanco);
     border-color: var(--green);
-     box-shadow: 0 0.5rem 1rem rgba(232, 62, 140, 0.35);
-  transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(232, 62, 140, 0.35);
+    transform: translateY(-1px);
 }
-
-
-
-

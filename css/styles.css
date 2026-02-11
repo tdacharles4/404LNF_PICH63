@@ -1,22 +1,10 @@
+@import "variables.css";
 @import "navbar.css";
 @import "buttons.css";
 @import "footer.css";
 @import "flip-cards.css";
 @import "forms.css";
-
-:root{
-  --pink: #e4007c;       /* barra superior */
-  --green: #00a36c;      /* menú */
-  --green-dark: #8e8e8e;
-  --soft: #f6f7f8;       /* fondo suave */
-  --text: #111111;
-
-  --rosa: var(--pink);
-  --jade: var(--green);
-  --gris: var(--green-dark);
-  --blanco: #ffffff;
-  --negro: var(--text);
-}
+@import "hero-carrousel.css";
 
 body{
   color: var(--text);
