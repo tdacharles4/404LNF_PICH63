@@ -57,11 +57,20 @@
 
 .btn-outline-mixe {
     border: 2px solid var(--pink);
-    color: var(--pink);
+    color: var(--negro);
     background: transparent;
+    font-weight: 500;
+  transition: all 0.25s ease;
 }
 
 .btn-outline-mixe:hover {
-    background: var(--pink);
-    color: #fff;
+    background: var(--green);
+    color: var(--blanco);
+    border-color: var(--green);
+     box-shadow: 0 0.5rem 1rem rgba(232, 62, 140, 0.35);
+  transform: translateY(-1px);
 }
+
+
+
+
