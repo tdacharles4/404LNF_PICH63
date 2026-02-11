@@ -1,33 +1,6 @@
 // MIXE | ARTESANÍAS - JS básico (catálogo + carrito fake + validaciones)
 
-const STORAGE_KEY = "mixe_cart_count";
-
-function getCartCount() {
-  return Number(localStorage.getItem(STORAGE_KEY) || 0);
-}
-
-function setCartCount(n) {
-  localStorage.setItem(STORAGE_KEY, String(n));
-  const badge = document.querySelector("[data-cart-badge]");
-  if (badge) badge.textContent = String(n);
-}
-
-function addToCart() {
-  setCartCount(getCartCount() + 1);
-}
-
-// Set badge on load
 document.addEventListener("DOMContentLoaded", () => {
-  setCartCount(getCartCount());
-
-  // Botones "Añadir al carrito"
-  document.querySelectorAll("[data-add-to-cart]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      addToCart();
-      btn.blur();
-    });
-  });
-
   // Filtro rápido del catálogo (por texto)
   const search = document.querySelector("#catalogSearch");
   if (search) {
@@ -43,42 +16,94 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Validación Bootstrap forms
- document.querySelectorAll(".needs-validation").forEach(form => {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // siempre prevenir para controlar el flujo
+  document.querySelectorAll(".needs-validation").forEach(form => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    if (!form.checkValidity()) {
-      e.stopPropagation();
+      if (!form.checkValidity()) {
+        e.stopPropagation();
+        form.classList.add("was-validated");
+        return;
+      }
+
       form.classList.add("was-validated");
-      return; // si falla validación, no enviar
-    }
 
-    form.classList.add("was-validated");
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
 
-    // Envío a Formspree
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
+      const status = document.getElementById("formStatus");
+      if (response.ok) {
+        status.textContent = "¡Mensaje enviado con éxito!";
+        status.classList.remove("visually-hidden");
+        form.reset();
+        form.classList.remove("was-validated");
+      } else {
+        status.textContent = "Hubo un error al enviar.";
+        status.classList.remove("visually-hidden");
+      }
     });
-
-    const status = document.getElementById("formStatus");
-    if (response.ok) {
-      status.textContent = "¡Mensaje enviado con éxito!";
-      status.classList.remove("visually-hidden");
-      form.reset();
-      form.classList.remove("was-validated");
-    } else {
-      status.textContent = "Hubo un error al enviar.";
-      status.classList.remove("visually-hidden");
-    }
   });
-});
-
 
   // Cargar miembros de equipo
   loadTeamMembers();
+
+  // Push Carrito 06/02 - Badge initialization
+  const badge = document.querySelector('.cart-badge');
+  if (badge) {
+    const savedCart = localStorage.getItem('shoppingCart');
+    let shouldShowBadge = false;
+    
+    if (savedCart) {
+      try {
+        const cartData = JSON.parse(savedCart);
+        const quantity = Math.max(0, parseInt(cartData.quantity) || 0);
+        if (quantity > 0) {
+          shouldShowBadge = true;
+          badge.textContent = quantity;
+        }
+      } catch (error) {
+        console.error('Error loading cart in main.js:', error);
+      }
+    }
+    
+    badge.style.display = shouldShowBadge ? 'inline-block' : 'none';
+  }
+
+  // Add to cart button handler
+  document.addEventListener('click', function(e) {
+      const addToCartBtn = e.target.closest('.cart-btn-animated');
+      
+      if (addToCartBtn) {
+          e.stopImmediatePropagation();
+          
+          const card = addToCartBtn.closest('[data-product-card]') || addToCartBtn.closest('.card');
+          const productName = card.querySelector('h5, h6').textContent.trim();
+          const productPrice = parseFloat(card.querySelector('.price').textContent.replace('$', ''));
+          const productImage = card.querySelector('img').src;
+          
+          // Get the shopping cart element and call addItem
+          const shoppingCart = document.querySelector('shopping-cart');
+          if (shoppingCart && typeof shoppingCart.addItem === 'function') {
+              shoppingCart.addItem({
+                  name: productName,
+                  price: productPrice,
+                  image: productImage
+              });
+          }
+          
+          // Visual feedback
+          addToCartBtn.classList.add('btn-success');
+          addToCartBtn.classList.remove('btn-outline-success');
+          setTimeout(() => {
+              addToCartBtn.classList.remove('btn-success');
+              addToCartBtn.classList.add('btn-outline-success');
+          }, 300);
+      }
+  });
 });
 
 async function loadTeamMembers() {
