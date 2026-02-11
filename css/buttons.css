@@ -22,3 +22,46 @@
     border-color: var(--pink);
     color: #fff;
 }
+
+/* PLAY BUTTON */
+.play-btn {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.20);
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform .15s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.06);
+}
+
+/* Botones */
+.btn-mixe {
+    background: var(--pink);
+    color: #fff;
+    border: none;
+}
+
+.btn-mixe:hover {
+    filter: brightness(.95);
+    color: #fff;
+}
+
+.btn-outline-mixe {
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    background: transparent;
+}
+
+.btn-outline-mixe:hover {
+    background: var(--pink);
+    color: #fff;
+}

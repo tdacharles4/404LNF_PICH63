@@ -2,6 +2,7 @@
 @import "buttons.css";
 @import "footer.css";
 @import "flip-cards.css";
+@import "forms.css";
 
 :root{
   --pink: #e4007c;       /* barra superior */
@@ -9,6 +10,12 @@
   --green-dark: #8e8e8e;
   --soft: #f6f7f8;       /* fondo suave */
   --text: #111111;
+
+  --rosa: var(--pink);
+  --jade: var(--green);
+  --gris: var(--green-dark);
+  --blanco: #ffffff;
+  --negro: var(--text);
 }
 
 body{
@@ -122,24 +129,6 @@ body{
   transition: transform .25s ease;
 }
 
-/* PLAY BUTTON */
-.play-btn{
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 72px;
-  height: 72px;
-  border-radius: 999px;
-  border: 0;
-  background: rgba(255,255,255,.94);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.20);
-  font-size: 22px;
-  cursor: pointer;
-  transition: transform .15s ease;
-}
-
-.play-btn:hover{ transform: scale(1.06); }
-
 /* CARDS */
 .card-soft{
   border-radius: 18px;
@@ -246,41 +235,12 @@ body{
   .section-pad{ padding: 44px 0; }
 }
 
-/* ====== Compatibilidad: variables del segundo proyecto ====== */
-:root{
-  --rosa: var(--pink);
-  --jade: var(--green);
-  --gris: var(--green-dark);
-  --blanco: #ffffff;
-  --negro: var(--text);
-}
-
 /* ====== Estilos añadidos desde ARTESANÍAS (adaptados) ====== */
 html, body { height: 100%; }
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background: #f6f6f6;
-}
-
-/* Botones */
-.btn-mixe{
-  background: var(--pink);
-  color: #fff;
-  border: none;
-}
-.btn-mixe:hover{
-  filter: brightness(.95);
-  color: #fff;
-}
-.btn-outline-mixe{
-  border: 2px solid var(--pink);
-  color: var(--pink);
-  background: transparent;
-}
-.btn-outline-mixe:hover{
-  background: var(--pink);
-  color: #fff;
 }
 
 /* Cards */
@@ -305,37 +265,6 @@ body{
 }
 .section-subtitle{
   color: var(--green-dark);
-}
-
-
-
-/* Formularios */
-.form-control:focus{
-  border-color: var(--green);
-  box-shadow: 0 0 0 .2rem rgba(105, 194, 140, 0.895);
-}
-
-/*Texto dentro del formulario*/
- .form-label {
-  color: var(--pink); 
-  font-weight: 800; 
-}
-
-/*Color del formulario*/
-#contactForm{
-  background-color: var(--soft);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/*Color del boton del formulario*/
-#submitBtn{
-  background-color: var(--blanco);
-  color: var(--negro);
-}
-#submitBtn:hover{
-  background-color: var(--green);
-  color: var(--blanco);
 }
 
 
