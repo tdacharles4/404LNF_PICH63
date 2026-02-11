@@ -49,22 +49,7 @@
   transform: translateY(-1px);
 }
 
-/* Botón secundario (outline) */
-.btn-outline-mixe {
-  background-color: #e83e8c;
-  color: #ffffff;
-  border: 2px solid #e83e8c;
-  font-weight: 500;
-  transition: all 0.25s ease;
-}
 
-/* Hover con realce visible */
-.btn-outline-mixe:hover {
-  background-color: #e83e8c;
-  color: #ffffff;
-  box-shadow: 0 0.5rem 1rem rgba(232, 62, 140, 0.35);
-  transform: translateY(-1px);
-}
 
 /* Iconos/flechas */
 #heroCarousel .carousel-control-prev-icon,
