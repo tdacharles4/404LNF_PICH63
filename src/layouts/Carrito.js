@@ -1,19 +1,15 @@
-// carrito.js - Updated class
-
 class shoppingCart extends HTMLElement {
     constructor() {
         super();
         const savedCart = localStorage.getItem('shoppingCart');
-        this.items = []; // Changed to array
+        this.items = [];
         
         if (savedCart) {
             try {
                 const cartData = JSON.parse(savedCart);
-                // Check if we have old single-product format or new array format
                 if (Array.isArray(cartData.items)) {
                     this.items = cartData.items;
                 } else if (cartData.productName) {
-                    // Convert old format to new array format
                     if (cartData.quantity > 0) {
                         this.items = [{
                             name: cartData.productName,
@@ -29,7 +25,6 @@ class shoppingCart extends HTMLElement {
             }
         }
         
-        // Keep handler reference
         this.handleButtonClick = (e) => {
             if (!this.contains(e.target)) return;
             
@@ -72,17 +67,14 @@ class shoppingCart extends HTMLElement {
         document.removeEventListener('click', this.handleButtonClick);
     }
 
-    // Find or add item to cart
     addItem(product) {
         const existingItemIndex = this.items.findIndex(item => 
             item.name === product.name && item.price === product.price
         );
         
         if (existingItemIndex >= 0) {
-            // Increase quantity of existing item
             this.items[existingItemIndex].quantity++;
         } else {
-            // Add new item
             this.items.push({
                 name: product.name,
                 price: product.price,
@@ -181,34 +173,34 @@ class shoppingCart extends HTMLElement {
             `;
         }
         
-        // Generate HTML for all items
+        // Push Carrito 11-02 // Overlap de precio y botones arreglado en display y responsivo
         const itemsHtml = this.items.map((item, index) => `
             <div class="card rounded-3 mb-4 position-relative cart-item" data-index="${index}">
-                <button type="button" class="btn btn-sm position-absolute top-0 end-0 m-2 p-1 delete-btn" style="color: #dc3545; border: none; background: transparent;">
+                <button type="button" class="btn btn-sm position-absolute top-0 end-0 m-2 p-1 delete-btn" style="color: #dc3545; border: none; background: transparent; z-index: 10;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                         <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
                     </svg>
                 </button>
-                <div class="card-body p-4">
-                    <div class="row d-flex justify-content-between align-items-center">
-                        <div class="col-3">
+                <div class="card-body p-3 p-md-4">
+                    <div class="row g-2 align-items-center">
+                        <div class="col-3 col-md-2">
                             <img src="${item.image || 'img/test.jpg'}" class="img-fluid rounded-3" alt="${item.name || 'Product'}">
                         </div>
-                        <div class="col-4">
-                            <p class="lead fw-normal mb-2">${item.name || 'Product'}</p>
-                            <p class="text-muted small">$${item.price}</p>
+                        <div class="col-9 col-md-4">
+                            <p class="fw-normal mb-1 small">${item.name || 'Product'}</p>
+                            <p class="text-muted small mb-0">$${item.price}</p>
                         </div>
-                        <div class="col-3 d-flex align-items-center">
-                            <button type="button" class="btn btn-outline-dark px-2 py-0 decrease-btn">
-                                <i class="fas fa-minus"></i>
+                        <div class="col-7 col-md-4 d-flex align-items-center justify-content-start gap-1">
+                            <button type="button" class="btn btn-outline-dark btn-sm px-2 py-1 decrease-btn">
+                                <i class="fas fa-minus fa-xs"></i>
                             </button>
-                            <input type="number" value="${item.quantity}" class="form-control form-control-sm text-center quantity-input" style="width: 50px;" readonly />
-                            <button type="button" class="btn btn-outline-dark px-2 py-0 increase-btn">
-                                <i class="fas fa-plus"></i>
+                            <input type="number" value="${item.quantity}" class="form-control form-control-sm text-center quantity-input" style="width: 45px; min-width: 45px;" readonly />
+                            <button type="button" class="btn btn-outline-dark btn-sm px-2 py-1 increase-btn">
+                                <i class="fas fa-plus fa-xs"></i>
                             </button>
                         </div>
-                        <div class="col-2 text-end">
-                            <h6 class="mb-0 total-price">$${(item.price * item.quantity).toFixed(2)}</h6>
+                        <div class="col-5 col-md-2 text-end">
+                            <h6 class="mb-0 total-price small fw-bold">$${(item.price * item.quantity).toFixed(2)}</h6>
                         </div>
                     </div>
                 </div>
