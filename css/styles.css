@@ -597,3 +597,14 @@ footer a:hover{
     pointer-events: auto !important;
 }
 /* Carrito Push 06/02*/
+#bodyContact{
+
+    background-image: url('../img/Backgroundimg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#formContainer{
+  box-shadow: 0 18px 40px #8e8e8e;
+}
