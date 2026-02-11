@@ -3,6 +3,7 @@
 @import "footer.css";
 @import "flip-cards.css";
 @import "forms.css";
+@import "hero-carrousel.css";
 
 :root{
   --pink: #e4007c;       /* barra superior */
