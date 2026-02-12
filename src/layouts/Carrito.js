@@ -162,24 +162,22 @@ class shoppingCart extends HTMLElement {
 
     getCartContent() {
         if (this.items.length === 0) {
+            // Push Carrito 12-02 // All icons from BootStrap to Font-Awesome // Icono World para Empty Cart
             return `
                 <div class="text-center py-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-cart-x text-muted mb-3" viewBox="0 0 16 16">
-                        <path d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793z"/>
-                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                    </svg>
+                    <i class="fa-solid fa-earth-americas"></i>
                     <h5 class="text-muted">Your cart is empty</h5>
                 </div>
             `;
         }
         
         // Push Carrito 11-02 // Overlap de precio y botones arreglado en display y responsivo
+        // Push Carrito 12-02 // All icons from BootStrap to Font-Awesome
+            // Icono TrashCan para Delete de Carrito
         const itemsHtml = this.items.map((item, index) => `
             <div class="card rounded-3 mb-4 position-relative cart-item" data-index="${index}">
                 <button type="button" class="btn btn-sm position-absolute top-0 end-0 m-2 p-1 delete-btn" style="color: #dc3545; border: none; background: transparent; z-index: 10;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                    </svg>
+                    <i class="fa-solid fa-trash-can"></i>
                 </button>
                 <div class="card-body p-3 p-md-4">
                     <div class="row g-2 align-items-center">
