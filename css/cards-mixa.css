@@ -1,0 +1,24 @@
+/* CARD - Compromiso Mixa*/
+.card-soft {
+    border-radius: 18px;
+    background: #fff;
+    border: 2px solid rgba(10, 160, 110, .12);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* Cards - en productos*/
+.card {
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.card .price {
+    font-weight: 800;
+    color: var(--text);
+}
+
+.card .muted {
+    color: var(--green-dark);
+    font-size: .9rem;
+}

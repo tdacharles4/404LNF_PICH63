@@ -1,0 +1,7 @@
+/* Alert suave */
+.alert-soft{
+  background: rgba(10,160,110,.10);
+  border: 1px solid rgba(10,160,110,.18);
+  color: #0b3b2a;
+  border-radius: 16px;
+}
