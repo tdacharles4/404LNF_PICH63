@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     
-    <a class="navbar-brand" href="/pages/Index.html">
-        <img src="../img/Logo_horizontal.svg" alt="MIXA | Artesanías" height="40">
+    <a class="navbar-brand" href="Index.html">
+        <img src="../img/logo/Logo_horizontal.svg" alt="MIXA | Artesanías" height="40">
     </a>
 
     <!-- Íconos -->
     <div class="d-flex align-items-center order-lg-3">
-      <a href="/pages/Login.html" class="nav-link me-3 position-relative">
+      <a href="Login.html" class="nav-link me-3 position-relative">
         <i class="fa-regular fa-user fs-5"></i>
       </a>
 
@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Menú -->
     <div class="collapse navbar-collapse order-lg-1" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/pages/Index.html">Inicio</a>
+        <a class="nav-link" href="Index.html">Inicio</a>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"
-            href="/pages/Products.html"
+            href="Products.html"
             id="navbarDropdown"
             role="button"
             aria-expanded="false">
@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             </ul>
                         </li>
                     </ul>
-        <a class="nav-link" href="/pages/Contact.html">Contacto</a>
-        <a class="nav-link" href="/pages/AboutUs.html">Acerca de</a>
-        <a class="nav-link" href="/pages/SignUp.html">Registro</a>
+        <a class="nav-link" href="Contact.html">Contacto</a>
+        <a class="nav-link" href="AboutUs.html">Acerca de</a>
+        <a class="nav-link" href="SignUp.html">Registro</a>
 
       </div>
     </div>

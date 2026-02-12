@@ -1,0 +1,17 @@
+/* Formularios */
+.form-control:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 .2rem rgba(105, 194, 140, 0.895);
+}
+
+/*Texto dentro del formulario*/
+.form-label {
+    color: var(--pink);
+    font-weight: 800;
+}
+
+.needs-validation{
+    background-color: var(--soft);
+    padding: 1rem;
+    border-radius: 8px;
+}

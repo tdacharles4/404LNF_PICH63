@@ -78,28 +78,28 @@
       </div>
       <div class="row g-3 mt-2">
         <div class="col-6 col-md-3">
-          <div class="card p-3 h-100">
+          <div class="card card-category p-3 h-100">
             <div class="tag mb-2">Top</div>
             <h5 class="mb-1">Textiles</h5>
             <p class="muted mb-0">Blusas, rebozos, bordados</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="card p-3 h-100">
+          <div class="card card-category p-3 h-100">
             <div class="tag mb-2">Nuevo</div>
             <h5 class="mb-1">Cerámica</h5>
             <p class="muted mb-0">Talavera, barro, piezas decorativas</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="card p-3 h-100">
+          <div class="card card-category p-3 h-100">
             <div class="tag mb-2">Regalo</div>
             <h5 class="mb-1">Joyería</h5>
             <p class="muted mb-0">Hecha a mano</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="card p-3 h-100">
+          <div class="card card-category p-3 h-100">
             <div class="tag mb-2">Popular</div>
             <h5 class="mb-1">Alebrijes</h5>
             <p class="muted mb-0">Piezas únicas</p>
@@ -291,7 +291,7 @@
       </div>
       <div class="col-12 col-md-4 col-lg-3">
         <div class="card h-100">
-          <img alt="Producto" class="w-100" src="/img/bordado-premium.jpg"/>
+          <img alt="Producto" cclass="w-100" src="/img/bordado-premium.jpg"/>
           <div class="p-3">
             <h6 class="mb-1">Bordado premium</h6>
             <div class="muted">Chiapas · Textil</div>
@@ -307,13 +307,59 @@
           </div>
         </div>
       </div>
+    <!-- Producto 7 -->
+    <div class="col-12 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <img alt="Producto" class="w-100" src="/img/rebozo-textl.png"/>
+        <div class="p-3">
+          <h6 class="mb-1">Rebozo</h6>
+          <div class="muted">Oaxaca · Textil</div>
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <div class="price">$350</div>
+            <button class="btn btn-outline-success cart-btn-animated" type="button">
+                <span class="cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </span>
+                <span class="cart-text">Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Producto 8 -->
+    <div class="col-12 col-md-4 col-lg-3">
+      <div class="card h-100">
+        <img alt="Producto" class="w-100" src="/img/catrina-artesanal.jpg"/>
+        <div class="p-3">
+          <h6 class="mb-1">Catrina Decorativa</h6>
+          <div class="muted">Michoacán · Ceramica </div>
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <div class="price">$410</div>
+            <button class="btn btn-outline-success cart-btn-animated" type="button">
+                <span class="cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </span>
+                <span class="cart-text">Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   </section>
   
   <!--Footer-->
   <footer id="footer"></footer>
+  <script defer src="/src/layouts/Footer.js"></script>
   <!-- Bootstrap JS + tu JS -->
-  <script defer="defer" src="../JavaScript/app.js"></script>
+  <script src="../navbar.js" defer></script>
+  <script src="../JavaScript/app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../styles.css">
 </body>

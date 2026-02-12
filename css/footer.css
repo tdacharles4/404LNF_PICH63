@@ -1,0 +1,29 @@
+/* Footer */
+footer {
+    background: var(--text);
+    color: var(--text);
+    background-color: #E0E0E0;
+}
+
+footer a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+footer h5 {
+    color: var(--green);
+    text-transform: uppercase;
+    font-weight: 800
+}
+
+footer h5:hover {
+    color: var(--pink);
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 800
+}
+
+footer a:hover {
+    color: var(--pink);
+    text-decoration: underline;
+}

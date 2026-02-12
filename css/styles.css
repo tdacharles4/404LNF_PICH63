@@ -1,204 +1,20 @@
-:root{
-  --pink: #e4007c;       /* barra superior */
-  --green: #00a36c;      /* menú */
-  --green-dark: #8e8e8e;
-  --soft: #f6f7f8;       /* fondo suave */
-  --text: #111111;
-}
+@import "variables.css";
+@import "navbar.css";
+@import "buttons.css";
+@import "footer.css";
+@import "flip-cards.css";
+@import "forms.css";
+@import "hero-carrousel.css";
+@import "cart.css";
+@import "section-pads.css";
+@import "mixa-alerts.css";
+@import "blob-wraps.css";
+@import "cards-mixa.css";
+@import "checks-mixa.css";
 
 body{
   color: var(--text);
   background: #fff;
-}
-
-/* TOPBAR */
-.topbar{
-  background: var(--pink);
-  color: #fff;
-}
-
-.brand{
-  text-decoration: none;
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: .02em;
-}
-
-.brand-strong{ font-size: 1.35rem; }
-.brand-soft{
-  opacity: .9;
-  font-weight: 400;
-  margin-left: .35rem;
-}
-
-.topbar-icon{
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.15rem;
-  line-height: 1;
-  opacity: .95;
-}
-.topbar-icon:hover{ opacity: 1; }
-
-/* NAV */
-.nav-green{
-  background: var(--green);
-}
-
-.nav-green .nav-link{
-  color: #fff;
-  font-weight: 700;
-  opacity: .95;
-}
-
-.nav-green .nav-link:hover{
-  opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
-
-.nav-green .nav-link.active{
-  opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
-
-/* SECTIONS  */
-.section-pad{ padding: 64px 0; }
-.bg-soft{ background: var(--soft); }
-
-.eyebrow{
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  font-size: .85rem;
-  color: var(--green-dark);
-  font-weight: 800;
-}
-
-.story-subtitle{ max-width: 780px; }
-
-/* BUTTONS */
-.btn-brand{
-  background: var(--pink);
-  border-color: var(--pink);
-  color: #fff;
-  font-weight: 700;
-}
-
-.btn-brand:hover{
-  filter: brightness(.95);
-  color: #fff;
-}
-
-.btn-outline-brand{
-  color: var(--pink);
-  border-color: var(--pink);
-  font-weight: 700;
-}
-
-.btn-outline-brand:hover{
-  background: var(--pink);
-  border-color: var(--pink);
-  color: #fff;
-}
-
-/* BLOBS (NO RECTANGULAR) */
-.blob-wrap{
-  width: min(520px, 100%);
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  position: relative;
-  background: #eaeef6;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
-  border: 3px solid rgba(10,160,110,.20);
-}
-
-.blob-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.02);
-}
-
-/* 3 formas diferentes */
-.blob-variant-0{
-  border-radius: 55% 45% 52% 48% / 40% 45% 55% 60%;
-  border-color: rgba(10,160,110,.20);
-}
-
-.blob-variant-1{
-  border-radius: 62% 38% 55% 45% / 42% 55% 45% 58%;
-  border-color: rgba(233,30,99,.18);
-}
-
-.blob-variant-2{
-  border-radius: 48% 52% 40% 60% / 55% 40% 60% 45%;
-  border-color: rgba(10,160,110,.22);
-}
-
-/* Hover pro */
-.blob-wrap:hover .blob-img{
-  transform: scale(1.06);
-  transition: transform .25s ease;
-}
-
-/* PLAY BUTTON */
-.play-btn{
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 72px;
-  height: 72px;
-  border-radius: 999px;
-  border: 0;
-  background: rgba(255,255,255,.94);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.20);
-  font-size: 22px;
-  cursor: pointer;
-  transition: transform .15s ease;
-}
-
-.play-btn:hover{ transform: scale(1.06); }
-
-/* CARDS */
-.card-soft{
-  border-radius: 18px;
-  background: #fff;
-  border: 2px solid rgba(10,160,110,.12);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-}
-
-.feature-card{
-  border-radius: 18px;
-  background: #fff;
-  border: 2px solid rgba(233,30,99,.10);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-}
-
-.feature-icon{
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: rgba(233,30,99,.10);
-  color: var(--pink);
-  font-weight: 900;
-  margin-bottom: 12px;
-}
-
-/* Alert suave */
-.alert-soft{
-  background: rgba(10,160,110,.10);
-  border: 1px solid rgba(10,160,110,.18);
-  color: #0b3b2a;
-  border-radius: 16px;
-}
-
-/* Checks */
-.check{
-  color: var(--green);
-  font-weight: 900;
 }
 
 /* TABLE VALUES */
@@ -230,28 +46,7 @@ body{
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
-.avatar{
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 3px solid rgba(233,30,99,.18);
-  flex: 0 0 auto;
-  background: rgba(233,30,99,.08);
-}
 
-.avatar img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.role{
-  color: var(--green-dark);
-  font-weight: 800;
-  font-size: .9rem;
-}
 
 /* CTA final */
 .cta-final{
@@ -266,85 +61,12 @@ body{
   .section-pad{ padding: 44px 0; }
 }
 
-/* ====== Compatibilidad: variables del segundo proyecto ====== */
-:root{
-  --rosa: var(--pink);
-  --jade: var(--green);
-  --gris: var(--green-dark);
-  --blanco: #ffffff;
-  --negro: var(--text);
-}
-
 /* ====== Estilos añadidos desde ARTESANÍAS (adaptados) ====== */
 html, body { height: 100%; }
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background: #f6f6f6;
-}
-
-/* Navbar */
-.navbar-mixe{
-  background: linear-gradient(90deg, var(--pink), #c3006a);
-}
-.navbar-mixe .navbar-brand,
-.navbar-mixe .nav-link{
-  color: #fff !important;
-}
-.navbar-mixe .nav-link.active{
-  font-weight: 700;
-  text-decoration: underline;
-}
-.navbar-mixe .nav-link:hover{
-  opacity: .9;
-}
-.navbar-mixe .badge{
-  background: var(--green);
-  color: var(--text);
-}
-
-.subnav{
-  background: var(--green);
-}
-.subnav .nav-link{
-  color: #fff !important;
-  opacity: .95;
-}
-.subnav .nav-link:hover{ opacity: 1; }
-
-/* Botones */
-.btn-mixe{
-  background: var(--pink);
-  color: #fff;
-  border: none;
-}
-.btn-mixe:hover{
-  filter: brightness(.95);
-  color: #fff;
-}
-.btn-outline-mixe{
-  border: 2px solid var(--pink);
-  color: var(--pink);
-  background: transparent;
-}
-.btn-outline-mixe:hover{
-  background: var(--pink);
-  color: #fff;
-}
-
-/* Cards */
-.card{
-  border: 1px solid #e8e8e8;
-  border-radius: 14px;
-  overflow: hidden;
-}
-.card .price{
-  font-weight: 800;
-  color: var(--text);
-}
-.card .muted{
-  color: var(--green-dark);
-  font-size: .9rem;
 }
 
 /* Secciones */
@@ -356,60 +78,10 @@ body{
   color: var(--green-dark);
 }
 
-/* Footer */
-footer{
-  background: var(--text);
-  color: var(--text);
-  background-color: #E0E0E0;
-}
-footer a{
-  color: var(--text);
-  text-decoration: none; 
-}
 
-footer h5{
-  color: var(--green);
-  text-transform: uppercase;
-  font-weight: 800
-}
-
-footer h5:hover{
-  color: var(--pink);
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-weight: 800
-}
-
-footer a:hover{
-  color: var(--pink);
-  text-decoration: underline;
-}
-
-/* Formularios */
-.form-control:focus{
-  border-color: var(--green);
-  box-shadow: 0 0 0 .2rem rgba(105, 194, 140, 0.895);
-}
- .form-label {
-  color: var(--pink); 
-  font-weight: 800; 
-}
-
-
-#contactForm{
-  background-color: var(--soft);
-  padding: 1rem;
-  border-radius: 8px;
-}
-#submitBtn{
-  background-color: var(--green);
-}
 #attachment{
-  background-color: var(--green);
+  background-color: var(--blanco);
 }
-
-
-
 
 
 /* Chips / etiquetas */
@@ -443,66 +115,6 @@ footer a:hover{
   background: linear-gradient(90deg, rgba(0,168,107,.55), rgba(228,0,124,.35));
 }
 
-/* Card CTA */
-.mixe-cta{
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 12px 30px rgba(17,17,17,.08);
-}
-
-.team-flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 280px;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.team-flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 38px;
-  background: #fff;
-  border: 8px solid rgba(10,160,110,.10);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.flip-card-front .avatar {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1rem;
-}
-
-.flip-card-front {
-  background: #fff;
-}
-
-.flip-card-back {
-  background: #fff;
-  transform: rotateY(180deg);
-}
-
 #nuestra-esencia {
   background-color: #c3006a;
   width: 100vw;
@@ -512,52 +124,3 @@ footer a:hover{
   margin-left: -50vw;
   margin-right: -50vw;
 }
-
-/* Carrito Push 06/02*/
-.cart-btn-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.cart-btn-animated {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    min-width: 46px;
-    white-space: nowrap;
-}
-
-.cart-btn-animated .cart-icon {
-    display: inline-block;
-    transition: transform 0.4s ease;
-}
-
-.cart-btn-animated .cart-text {
-    display: inline-block;
-    max-width: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-width 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
-    margin-left: 0;
-    vertical-align: middle;
-}
-
-.cart-btn-animated:hover {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.cart-btn-animated:hover .cart-text {
-    max-width: 200px;
-    opacity: 1;
-    margin-left: 0.5rem;
-}
-
-.cart-btn-animated:hover .cart-icon {
-    transform: translateX(0);
-}
-
-#shoppingCartOffcanvas .btn {
-    pointer-events: auto !important;
-}
-/* Carrito Push 06/02*/

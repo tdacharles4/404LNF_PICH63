@@ -1,0 +1,48 @@
+/* Carrito Push 06/02*/
+.cart-btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    min-width: 46px;
+    white-space: nowrap;
+}
+
+.cart-btn-animated .cart-icon {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.cart-btn-animated .cart-text {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+    margin-left: 0;
+    vertical-align: middle;
+}
+
+.cart-btn-animated:hover {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.cart-btn-animated:hover .cart-text {
+    max-width: 200px;
+    opacity: 1;
+    margin-left: 0.5rem;
+}
+
+.cart-btn-animated:hover .cart-icon {
+    transform: translateX(0);
+}
+
+#shoppingCartOffcanvas .btn {
+    pointer-events: auto !important;
+}
+/* Carrito Push 06/02*/
