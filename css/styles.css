@@ -192,13 +192,6 @@ body{
   background: linear-gradient(90deg, rgba(0,168,107,.55), rgba(228,0,124,.35));
 }
 
-/* Card CTA */
-.mixe-cta{
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 12px 30px rgba(17,17,17,.08);
-}
-
 #nuestra-esencia {
   background-color: #c3006a;
   width: 100vw;
