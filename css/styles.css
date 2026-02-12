@@ -6,13 +6,18 @@
 @import "forms.css";
 @import "hero-carrousel.css";
 @import "cart.css";
+@import "section-pads.css";
+@import "mixa-alerts.css";
+@import "blob-wraps.css";
+@import "cards-mixa.css";
+@import "checks-mixa.css";
 
 body{
   color: var(--text);
   background: #fff;
 }
 
-/* TOPBAR */
+/* TOPBAR 
 .topbar{
   background: var(--pink);
   color: #fff;
@@ -41,7 +46,7 @@ body{
 }
 .topbar-icon:hover{ opacity: 1; }
 
-/* NAV */
+/* NAV 
 .nav-green{
   background: var(--green);
 }
@@ -64,67 +69,7 @@ body{
   text-underline-offset: 6px;
 }
 
-/* SECTIONS  */
-.section-pad{ padding: 64px 0; }
-.bg-soft{ background: var(--soft); }
 
-.eyebrow{
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  font-size: .85rem;
-  color: var(--green-dark);
-  font-weight: 800;
-}
-
-.story-subtitle{ max-width: 780px; }
-
-/* BLOBS (NO RECTANGULAR) */
-.blob-wrap{
-  width: min(520px, 100%);
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  position: relative;
-  background: #eaeef6;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
-  border: 3px solid rgba(10,160,110,.20);
-}
-
-.blob-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.02);
-}
-
-/* 3 formas diferentes */
-.blob-variant-0{
-  border-radius: 55% 45% 52% 48% / 40% 45% 55% 60%;
-  border-color: rgba(10,160,110,.20);
-}
-
-.blob-variant-1{
-  border-radius: 62% 38% 55% 45% / 42% 55% 45% 58%;
-  border-color: rgba(233,30,99,.18);
-}
-
-.blob-variant-2{
-  border-radius: 48% 52% 40% 60% / 55% 40% 60% 45%;
-  border-color: rgba(10,160,110,.22);
-}
-
-/* Hover pro */
-.blob-wrap:hover .blob-img{
-  transform: scale(1.06);
-  transition: transform .25s ease;
-}
-
-/* CARDS */
-.card-soft{
-  border-radius: 18px;
-  background: #fff;
-  border: 2px solid rgba(10,160,110,.12);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-}
 
 .feature-card{
   border-radius: 18px;
@@ -145,19 +90,9 @@ body{
   margin-bottom: 12px;
 }
 
-/* Alert suave */
-.alert-soft{
-  background: rgba(10,160,110,.10);
-  border: 1px solid rgba(10,160,110,.18);
-  color: #0b3b2a;
-  border-radius: 16px;
-}
 
-/* Checks */
-.check{
-  color: var(--green);
-  font-weight: 900;
-}
+
+
 
 /* TABLE VALUES */
 .table-values{
@@ -188,28 +123,7 @@ body{
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
-.avatar{
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 3px solid rgba(233,30,99,.18);
-  flex: 0 0 auto;
-  background: rgba(233,30,99,.08);
-}
 
-.avatar img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.role{
-  color: var(--green-dark);
-  font-weight: 800;
-  font-size: .9rem;
-}
 
 /* CTA final */
 .cta-final{
@@ -230,21 +144,6 @@ body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background: #f6f6f6;
-}
-
-/* Cards */
-.card{
-  border: 1px solid #e8e8e8;
-  border-radius: 14px;
-  overflow: hidden;
-}
-.card .price{
-  font-weight: 800;
-  color: var(--text);
-}
-.card .muted{
-  color: var(--green-dark);
-  font-size: .9rem;
 }
 
 /* Secciones */
