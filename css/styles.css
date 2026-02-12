@@ -11,54 +11,11 @@
 @import "blob-wraps.css";
 @import "cards-mixa.css";
 @import "checks-mixa.css";
+@import "dividers.css";
 
 body{
   color: var(--text);
   background: #fff;
-}
-
-/* TABLE VALUES */
-.table-values{
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-}
-
-.table-values thead th{
-  background: rgba(10,160,110,.12);
-  border-bottom: 1px solid rgba(10,160,110,.18);
-  color: #0b3b2a;
-}
-
-.table-values td, .table-values th{
-  padding: 14px 16px;
-  border-color: rgba(15,23,42,.06);
-}
-
-/* TEAM */
-
-/*Esto es para el borde de la imagen */
-.team-card{
-  border-radius: 38px;
-  background: #fff;
-  border: 8px solid rgba(10,160,110,.10);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-}
-
-
-
-/* CTA final */
-.cta-final{
-  border-radius: 22px;
-  background: #fff;
-  border: 2px solid rgba(233,30,99,.12);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
-}
-
-/* Responsive */
-@media (max-width: 575px){
-  .section-pad{ padding: 44px 0; }
 }
 
 /* ====== Estilos añadidos desde ARTESANÍAS (adaptados) ====== */
@@ -67,60 +24,4 @@ body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background: #f6f6f6;
-}
-
-/* Secciones */
-.section-title{
-  font-weight: 900;
-  letter-spacing: .2px;
-}
-.section-subtitle{
-  color: var(--green-dark);
-}
-
-
-#attachment{
-  background-color: var(--blanco);
-}
-
-
-/* Chips / etiquetas */
-.tag{
-  display: inline-block;
-  padding: .25rem .55rem;
-  border-radius: 999px;
-  font-size: .8rem;
-  background: rgba(0,168,107,.12);
-  color: var(--text);
-  border: 1px solid rgba(0,168,107,.25);
-}
-
-/* Sidebar filtros */
-.filters{
-  position: sticky;
-  top: 90px;
-}
- .mixe-divider{
-  position: relative;
-  padding: 50px 0;
-  background: linear-gradient(180deg, rgba(0,168,107,.10), rgba(228,0,124,.06));
-}
-
-/* Onda superior */
-.mixe-divider::before{
-  content:"";
-  position:absolute;
-  top:-1px; left:0; right:0;
-  height:18px;
-  background: linear-gradient(90deg, rgba(0,168,107,.55), rgba(228,0,124,.35));
-}
-
-#nuestra-esencia {
-  background-color: #c3006a;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }

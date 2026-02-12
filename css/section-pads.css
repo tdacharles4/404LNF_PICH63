@@ -18,3 +18,8 @@
 .story-subtitle {
     max-width: 780px;
 }
+
+/* Responsive */
+@media (max-width: 575px){
+  .section-pad{ padding: 44px 0; }
+}
