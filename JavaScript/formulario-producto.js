@@ -117,21 +117,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Validar Material
-        const material = document.getElementById('material').value.trim();
-        if (!material) {
-            errores.push('El material es obligatorio');
-        } else if (material.length < 3) {
-            errores.push('El material debe tener al menos 3 caracteres');
+        const materialId = document.getElementById('material').value;
+        if (!materialId) {
+            errores.push('Debes seleccionar un material');
         } else {
-            datos.material = material;
+            datos.material_id = parseInt(materialId);
         }
 
         // Validar Procedencia
-        const procedencia = document.getElementById('procedencia').value;
-        if (!procedencia) {
+        const procedenciaId = document.getElementById('procedencia').value;
+        if (!procedenciaId) {
             errores.push('Debes seleccionar el estado de procedencia');
         } else {
-            datos.procedencia = procedencia;
+            datos.procedencia_id = parseInt(procedenciaId);
         }
 
         // Obtener estado activo (checkbox)
@@ -166,8 +164,8 @@ document.addEventListener('DOMContentLoaded', function() {
             categoria_id: datos.categoria_id,
             imagenes: datos.imagenes,
             activo: datos.activo,
-            material: datos.material,
-            procedencia: datos.procedencia
+            material: datos.material_id,
+            procedencia: datos.procedencia_id
         };
 
         return producto;

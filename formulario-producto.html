@@ -126,68 +126,69 @@
                 <label for="categoria" class="form-label">Categoría *</label>
                 <select id="categoria" name="categoria_id" class="form-select" required>
                   <option value="" disabled selected>Selecciona...</option>
-                  <option value="1">Madera</option>
-                  <option value="2">Cerámica</option>
-                  <option value="3">Textil</option>
-                  <option value="4">Cestería</option>
-                  <option value="5">Joyería</option>
+                  <option value="1">Alebrijes</option>
+                  <option value="2">Joyería</option>
+                  <option value="3">Ropa</option>
+                  <option value="4">Muebles</option>
+                  <option value="5">Decoración</option>
                 </select>
                 <div class="invalid-feedback">Selecciona una categoría</div>
               </div>
             </div>
 
-            <!-- Material y Procedencia -->
+            <!-- Material -->
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="material" class="form-label">Material *</label>
-                <input 
-                  type="text" 
-                  id="material" 
-                  name="material" 
-                  class="form-control" 
-                  placeholder="Ej: madera, cerámica, textil..."
-                  required
-                  minlength="3"
-                />
-                <div class="invalid-feedback">Material requerido</div>
+                 <label for="material" class="form-label">Material *</label>
+                <select id="material" name="material_id" class="form-select" required>
+                  <option value="" disabled selected>Selecciona...</option>
+                  <option value="1">Madera</option>
+                  <option value="2">Metal</option>
+                  <option value="3">Cerámica</option>
+                  <option value="4">Barro</option>
+                  <option value="5">Fibras y tejidos</option>
+                  <option value="6">Vidrio</option>
+                  <option value="7">Cuero</option>
+                </select>
+                <div class="invalid-feedback">Selecciona un material</div>
               </div>
-
+            <!-- Procedencia -->
               <div class="col-md-6 mb-3">
                 <label for="procedencia" class="form-label">Procedencia (Estado) *</label>
-                <select id="procedencia" name="procedencia" class="form-select" required>
+                <select id="procedencia" name="procedencia_id" class="form-select" required>
                   <option value="" disabled selected>Selecciona el estado...</option>
-                  <option value="Aguascalientes">Aguascalientes</option>
-                  <option value="Baja California">Baja California</option>
-                  <option value="Baja California Sur">Baja California Sur</option>
-                  <option value="Campeche">Campeche</option>
-                  <option value="Chiapas">Chiapas</option>
-                  <option value="Chihuahua">Chihuahua</option>
-                  <option value="Ciudad de México">Ciudad de México</option>
-                  <option value="Coahuila">Coahuila</option>
-                  <option value="Colima">Colima</option>
-                  <option value="Durango">Durango</option>
-                  <option value="Estado de México">Estado de México</option>
-                  <option value="Guanajuato">Guanajuato</option>
-                  <option value="Guerrero">Guerrero</option>
-                  <option value="Hidalgo">Hidalgo</option>
-                  <option value="Jalisco">Jalisco</option>
-                  <option value="Michoacán">Michoacán</option>
-                  <option value="Morelos">Morelos</option>
-                  <option value="Nayarit">Nayarit</option>
-                  <option value="Nuevo León">Nuevo León</option>
-                  <option value="Oaxaca">Oaxaca</option>
-                  <option value="Puebla">Puebla</option>
-                  <option value="Querétaro">Querétaro</option>
-                  <option value="Quintana Roo">Quintana Roo</option>
-                  <option value="San Luis Potosí">San Luis Potosí</option>
-                  <option value="Sinaloa">Sinaloa</option>
-                  <option value="Sonora">Sonora</option>
-                  <option value="Tabasco">Tabasco</option>
-                  <option value="Tamaulipas">Tamaulipas</option>
-                  <option value="Tlaxcala">Tlaxcala</option>
-                  <option value="Veracruz">Veracruz</option>
-                  <option value="Yucatán">Yucatán</option>
-                  <option value="Zacatecas">Zacatecas</option>
+                  <option value="1">Aguascalientes</option>
+                  <option value="2">Baja California</option>
+                  <option value="3">Baja California Sur</option>
+                  <option value="4">Campeche</option>
+                  <option value="5">Chiapas</option>
+                  <option value="6">Chihuahua</option>
+                  <option value="7">Ciudad de México</option>
+                  <option value="8">Coahuila</option>
+                  <option value="9">Colima</option>
+                  <option value="10">Durango</option>
+                  <option value="11">Estado de México</option>
+                  <option value="12">Guanajuato</option>
+                  <option value="13">Guerrero</option>
+                  <option value="14">Hidalgo</option>
+                  <option value="15">Jalisco</option>
+                  <option value="16">Michoacán</option>
+                  <option value="17">Morelos</option>
+                  <option value="18">Nayarit</option>
+                  <option value="19">Nuevo León</option>
+                  <option value="20">Oaxaca</option>
+                  <option value="21">Puebla</option>
+                  <option value="22">Querétaro</option>
+                  <option value="23">Quintana Roo</option>
+                  <option value="24">San Luis Potosí</option>
+                  <option value="25">Sinaloa</option>
+                  <option value="26">Sonora</option>
+                  <option value="27">Tabasco</option>
+                  <option value="28">Tamaulipas</option>
+                  <option value="29">Tlaxcala</option>
+                  <option value="30">Veracruz</option>
+                  <option value="31">Yucatán</option>
+                  <option value="32">Zacatecas</option>
                 </select>
                 <div class="invalid-feedback">Selecciona el estado de origen</div>
               </div>
