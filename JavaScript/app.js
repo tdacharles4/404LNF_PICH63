@@ -136,3 +136,52 @@ async function loadTeamMembers() {
     console.error("Error loading team members:", error);
   }
 }
+
+//Cargar productos 
+
+async function loadProducts() {
+
+    const cardsContainer = document.getElementById("cardsContainer");
+
+    if (!cardsContainer) return;
+
+    try {
+        const response = await fetch("../data/products.json");
+        const data = await response.json();
+
+        const catalogo = data.catalogo;
+        const products = catalogo.productos;
+
+        cardsContainer.innerHTML = "";
+
+        products.forEach(product => {
+
+    const material = catalogo.materiales.find(m => m.id === product.material_id);
+    const estado = catalogo.estados.find(e => e.id === product.estado_id);
+
+    const card = document.createElement("div");
+    card.classList.add("col-12", "col-md-6", "col-xl-4");
+
+    card.innerHTML = `
+        <div class="card h-100">
+            <img src="${product.imagenes}" alt="${product.nombre}">
+            <div class="p-3">                    
+                <h5 class="mb-1">${product.nombre}</h5>
+                <div class="muted mb-2">
+                    ${estado?.nombre || ""} · ${material?.nombre || ""}
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="price">$${product.precio}</div>
+                    <button class="btn btn-mixe btn-sm">Añadir</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    cardsContainer.appendChild(card);
+});
+    } catch (error) {
+        console.error("Error cargando productos:", error);
+    }
+}
+loadProducts();

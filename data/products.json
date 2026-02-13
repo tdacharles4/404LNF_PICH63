@@ -4,7 +4,56 @@
     "version": "1.0",
     "fecha_actualizacion": "2026-02-11",
     "moneda": "MXN",
-    "categorias": [],
+    "categorias": [
+      { "id": 1, "nombre": "Alebrijes" },
+      { "id": 2, "nombre": "Joyería" },
+      { "id": 3, "nombre": "Ropa" },
+      { "id": 4, "nombre": "Muebles" },
+      { "id": 5, "nombre": "Decoración" }
+    ],
+    "materiales": [
+      { "id": 1, "nombre": "Madera" },
+      { "id": 2, "nombre": "Metal" },
+      { "id": 3, "nombre": "Cerámica" },
+      { "id": 4, "nombre": "Barro" },
+      { "id": 5, "nombre": "Fibras y tejidos" },
+      { "id": 6, "nombre": "Vidrio" },
+      { "id": 7, "nombre": "Cuero" }
+    ],
+    "estados": [
+      { "id": 1, "nombre": "Aguascalientes" },
+      { "id": 2, "nombre": "Baja California" },
+      { "id": 3, "nombre": "Baja California Sur" },
+      { "id": 4, "nombre": "Campeche" },
+      { "id": 5, "nombre": "Chiapas" },
+      { "id": 6, "nombre": "Chihuahua" },
+      { "id": 7, "nombre": "Ciudad de México" },
+      { "id": 8, "nombre": "Coahuila" },
+      { "id": 9, "nombre": "Colima" },
+      { "id": 10, "nombre": "Durango" },
+      { "id": 11, "nombre": "Guanajuato" },
+      { "id": 12, "nombre": "Guerrero" },
+      { "id": 13, "nombre": "Hidalgo" },
+      { "id": 14, "nombre": "Jalisco" },
+      { "id": 15, "nombre": "Estado de México" },
+      { "id": 16, "nombre": "Michoacán" },
+      { "id": 17, "nombre": "Morelos" },
+      { "id": 18, "nombre": "Nayarit" },
+      { "id": 19, "nombre": "Nuevo León" },
+      { "id": 20, "nombre": "Oaxaca" },
+      { "id": 21, "nombre": "Puebla" },
+      { "id": 22, "nombre": "Querétaro" },
+      { "id": 23, "nombre": "Quintana Roo" },
+      { "id": 24, "nombre": "San Luis Potosí" },
+      { "id": 25, "nombre": "Sinaloa" },
+      { "id": 26, "nombre": "Sonora" },
+      { "id": 27, "nombre": "Tabasco" },
+      { "id": 28, "nombre": "Tamaulipas" },
+      { "id": 29, "nombre": "Tlaxcala" },
+      { "id": 30, "nombre": "Veracruz" },
+      { "id": 31, "nombre": "Yucatán" },
+      { "id": 32, "nombre": "Zacatecas" }
+    ],
     "productos": [
       {
         "id": 1,
@@ -14,10 +63,10 @@
         "precio": 450.0,
         "stock": 1,
         "categoria_id": 1,
-        "imagenes": [],
+        "imagenes": "../img/Productos/alebrije-artesanal.png",
         "activo": true,
-        "material": "madera",
-        "procedencia": "Oaxaca"
+        "material_id": 1,
+        "estado_id": 20
       },
       {
         "id": 2,
@@ -26,11 +75,11 @@
         "descripcion": "Plato decorativo de cerámica, pintado a mano con diseños florales y aves en tonos azules, verdes y amarillos. Ideal para servir alimentos o decorar con un estilo artesanal elegante.",
         "precio": 650.0,
         "stock": 20,
-        "categoria_id": 2,
-        "imagenes": [],
+        "categoria_id": 5,
+        "imagenes": "../img/Productos/talavera-ceramica.png",
         "activo": true,
-        "material": "cerámica",
-        "procedencia": "Puebla"
+        "material_id": 3,
+        "estado_id": 21
       },
       {
         "id": 3,
@@ -40,10 +89,10 @@
         "precio": 320.0,
         "stock": 5,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/bordado-tradicional.png",
         "activo": true,
-        "material": "textil",
-        "procedencia": "Chiapas"
+        "material_id": 5,
+        "estado_id": 5
       },
       {
         "id": 4,
@@ -53,10 +102,10 @@
         "precio": 180.0,
         "stock": 4,
         "categoria_id": 4,
-        "imagenes": [],
+        "imagenes": "../img/Productos/cesteria.png",
         "activo": true,
-        "material": "fibra natural",
-        "procedencia": "Estado de México"
+        "material_id": 5,
+        "estado_id": 15
       },
       {
         "id": 5,
@@ -66,10 +115,10 @@
         "precio": 290.0,
         "stock": 12,
         "categoria_id": 5,
-        "imagenes": [],
+        "imagenes": "../img/Productos/joyeria.png",
         "activo": true,
-        "material": "plata",
-        "procedencia": "Taxco, Guerrero"
+        "material_id": 2,
+        "estado_id": 12
       },
       {
         "id": 6,
@@ -79,10 +128,10 @@
         "precio": 210.0,
         "stock": 5,
         "categoria_id": 2,
-        "imagenes": [],
+        "imagenes": "../img/Productos/barro-decorativo.png",
         "activo": true,
-        "material": "cerámica",
-        "procedencia": "Oaxaca"
+        "material_id": 4,
+        "estado_id": 20
       },
       {
         "id": 7,
@@ -92,10 +141,10 @@
         "precio": 320.0,
         "stock": 8,
         "categoria_id": 1,
-        "imagenes": [],
+        "imagenes": "../img/Productos/alebrije-mini.png",
         "activo": true,
-        "material": "madera",
-        "procedencia": "Oaxaca"
+        "material_id": 1,
+        "estado_id": 20
       },
       {
         "id": 8,
@@ -105,10 +154,10 @@
         "precio": 520.0,
         "stock": 2,
         "categoria_id": 2,
-        "imagenes": [],
+        "imagenes": "../img/Productos/talavera-clasica.png",
         "activo": true,
-        "material": "cerámica",
-        "procedencia": "Puebla"
+        "material_id": 3,
+        "estado_id": 21
       },
       {
         "id": 9,
@@ -118,10 +167,10 @@
         "precio": 480.0,
         "stock": 2,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/bordado-premium.png",
         "activo": true,
-        "material": "textil",
-        "procedencia": "Chiapas"
+        "material_id": 5,
+        "estado_id": 5
       },
       {
         "id": 10,
@@ -131,10 +180,10 @@
         "precio": 499.0,
         "stock": 5,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/botella.png",
         "activo": true,
-        "material": "vidrio",
-        "procedencia": "Durango"
+        "material_id": 6,
+        "estado_id": 10
       },
       {
         "id": 11,
@@ -144,10 +193,10 @@
         "precio": 449.0,
         "stock": 6,
         "categoria_id": 2,
-        "imagenes": [],
+        "imagenes": "../img/Productos/MacetaCalavera.png",
         "activo": true,
-        "material": "cerámica",
-        "procedencia": "Oaxaca"
+        "material_id": 3,
+        "estado_id": 20
       },
       {
         "id": 12,
@@ -157,10 +206,10 @@
         "precio": 899.0,
         "stock": 5,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/bolsa.png",
         "activo": true,
-        "material": "textil",
-        "procedencia": "Yucatán"
+        "material_id": 5,
+        "estado_id": 31
       },
       {
         "id": 13,
@@ -170,10 +219,10 @@
         "precio": 329.0,
         "stock": 10,
         "categoria_id": 5,
-        "imagenes": [],
+        "imagenes": "../img/Productos/aretes.png",
         "activo": true,
-        "material": "chaquira",
-        "procedencia": "Nayarit"
+        "material_id": 5,
+        "estado_id": 18
       },
       {
         "id": 14,
@@ -183,10 +232,10 @@
         "precio": 649.0,
         "stock": 7,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/chanclas.png",
         "activo": true,
-        "material": "textil",
-        "procedencia": "Jalisco"
+        "material_id": 5,
+        "estado_id": 14
       },
       {
         "id": 15,
@@ -196,10 +245,10 @@
         "precio": 579.0,
         "stock": 6,
         "categoria_id": 1,
-        "imagenes": [],
+        "imagenes": "../img/Productos/plato.png",
         "activo": true,
-        "material": "madera",
-        "procedencia": "Michoacán"
+        "material_id": 1,
+        "estado_id": 16
       },
       {
         "id": 16,
@@ -209,10 +258,10 @@
         "precio": 499.0,
         "stock": 8,
         "categoria_id": 1,
-        "imagenes": [],
+        "imagenes": "../img/Productos/aretero.png",
         "activo": true,
-        "material": "madera",
-        "procedencia": "Puebla"
+        "material_id": 1,
+        "estado_id": 21
       },
       {
         "id": 17,
@@ -222,10 +271,10 @@
         "precio": 389.0,
         "stock": 6,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/peluchito.png",
         "activo": true,
-        "material": "textil",
-        "procedencia": "Chiapas"
+        "material_id": 5,
+        "estado_id": 5
       },
       {
         "id": 18,
@@ -235,10 +284,10 @@
         "precio": 699.0,
         "stock": 5,
         "categoria_id": 1,
-        "imagenes": [],
+        "imagenes": "../img/Productos/juegoDeCucharas.png",
         "activo": true,
-        "material": "madera",
-        "procedencia": "Guanajuato"
+        "material_id": 1,
+        "estado_id": 11
       },
       {
         "id": 19,
@@ -248,10 +297,10 @@
         "precio": 749.0,
         "stock": 6,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/bolsaConSeguro.png",
         "activo": true,
-        "material": "textil",
-        "procedencia": "Quintana Roo"
+        "material_id": 5,
+        "estado_id": 23
       },
       {
         "id": 20,
@@ -261,10 +310,10 @@
         "precio": 599.0,
         "stock": 7,
         "categoria_id": 2,
-        "imagenes": [],
+        "imagenes": "../img/Productos/bandejaPintada.png",
         "activo": true,
-        "material": "cerámica",
-        "procedencia": "Guerrero"
+        "material_id": 3,
+        "estado_id": 12
       },
       {
         "id": 21,
@@ -274,10 +323,10 @@
         "precio": 529.0,
         "stock": 6,
         "categoria_id": 3,
-        "imagenes": [],
+        "imagenes": "../img/Productos/sombrero.png",
         "activo": true,
-        "material": "textil",
-        "procedencia": "San Luis Potosí"
+        "material_id": 5,
+        "estado_id": 24
       }
     ]
   }
