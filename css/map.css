@@ -1,0 +1,167 @@
+/* 1. RESET Y ESTILOS BASE DEL SVG */
+#mapa-mexico {
+    transition: transform 0.1s ease-out;
+    transform-origin: center;
+}
+
+path {
+    fill: #6f9c76;
+    /* Verde base */
+    stroke: #ffffff;
+    stroke-width: 0.5;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+    pointer-events: all;
+}
+
+/* Color cuando pasas el mouse o tocas (Rosa Mixa) */
+path:hover,
+.estado-activo {
+    fill: #d63384 !important;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+}
+
+/* 2. CONTENEDOR PRINCIPAL */
+.seccion-mapa {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-svg {
+    position: relative;
+    height: 700px;
+    /* Altura en PC */
+    background: #f8f9fa;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: none;
+}
+
+.contenedor-svg:active {
+    cursor: grabbing;
+}
+
+/* 3. PANEL DE INFORMACIÓN (CUADRO DE TEXTO) */
+.panel-info-mixa {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.95);
+    border-left: 5px solid #d63384;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    text-align: left;
+}
+
+.panel-info-mixa h3 {
+    color: #000;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.panel-info-mixa p {
+    color: #050505 ;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 4. CONTROLES DE ZOOM */
+.controles-zoom {
+    position: absolute;
+    top: 450px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.controles-zoom button {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #d63384;
+    border-radius: 8px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controles-zoom button:hover {
+    background: #d63384;
+    color: #fff;
+}
+
+/* 5. TOOLTIP (EL CUADRITO QUE SIGUE AL MOUSE) */
+#tooltip {
+    display: none;
+    position: fixed;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    pointer-events: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    min-width: 180px;
+}
+
+#tooltip-nombre {
+    display: block;
+    color: #d63384;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+#tooltip-artesanias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* 6. DISEÑO RESPONSIVO (MÓVIL Y TABLET) */
+@media (max-width: 850px) {
+    .contenedor-svg {
+        height: 450px;
+        /* Reducimos altura del mapa en móvil */
+    }
+
+    /* El panel de info se mueve DEBAJO del mapa */
+    .panel-info-mixa {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        border-left: none;
+        border-top: 5px solid #d63384;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    /* Los botones de zoom se mueven a la parte inferior para no tapar */
+    .controles-zoom {
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+        flex-direction: row;
+        /* Botones horizontales */
+    }
+}
