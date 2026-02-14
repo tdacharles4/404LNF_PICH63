@@ -22,3 +22,10 @@
     color: var(--green-dark);
     font-size: .9rem;
 }
+
+/* Card CTA */
+.mixe-cta {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(17, 17, 17, .08);
+}
