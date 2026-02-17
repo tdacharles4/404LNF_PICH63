@@ -1,0 +1,42 @@
+/* Divisiones de sección, por ejemplo "Catálogo de Productos" 
+   títulos y subtítulos */
+/* Secciones */
+.section-title {
+    font-weight: 900;
+    letter-spacing: .2px;
+}
+
+.section-subtitle {
+    color: var(--green-dark);
+}
+
+/* División entre secciones con degradado */
+.mixe-divider {
+    position: relative;
+    padding: 50px 0;
+    background: linear-gradient(180deg, rgba(0, 168, 107, .10), rgba(228, 0, 124, .06));
+}
+
+/* Onda superior */
+.mixe-divider::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: linear-gradient(90deg, rgba(0, 168, 107, .55), rgba(228, 0, 124, .35));
+}
+
+
+/* División entre secciones "Acerca de" */
+
+#nuestra-esencia {
+    background-color: #c3006a;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
