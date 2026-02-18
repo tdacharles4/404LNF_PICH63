@@ -17,6 +17,7 @@
 body{
   color: var(--text);
   background: #fff;
+  padding-top: 85px; /* Ajusta este valor según la altura de tu navbar */
 }
 
 /* ====== Estilos añadidos desde ARTESANÍAS (adaptados) ====== */
