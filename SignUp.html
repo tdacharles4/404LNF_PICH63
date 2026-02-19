@@ -45,41 +45,50 @@
       <div class="col-12 col-lg-7">
         <div class="card p-4">
           <form id="PaginaRegistro" class="needs-validation" novalidate="">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Nombre</label>
-                <input class="form-control" name="nombre" type="text" required placeholder="Ejemplo: Juan">
-                <div class="invalid-feedback">Pon tu nombre.</div>
+            <div class="">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Nombre</label>
+                  <input class="form-control" name="nombre" type="text" required placeholder="Juan" id="first-name">
+                  <div class="invalid-feedback">Escribe tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Apellido</label>
+                  <input class="form-control" name="apellido" type="text" required placeholder="Pérez" id="last-name">
+                  <div class="invalid-feedback">Escribe tu apellido.</div>
+                </div>
               </div>
-              <div class="col-md-6">
-                <label class="form-label">Apellido</label>
-                <input class="form-control" name="apellido" type="text" required placeholder="Pérez">
-                <div class="invalid-feedback">Pon tu apellido.</div>
-              </div>
-              <div class="col-12">
+              <div class="col-md-12">
                 <label class="form-label">Correo</label>
-                <input class="form-control" name="correo" required type="email" placeholder="nombre@ejemplo.com">
-                <div class="invalid-feedback">Pon un correo válido.</div>
+                <input class="form-control" name="correo" required type="email" placeholder="nombre@ejemplo.com" id="e-mail">
+                <div class="invalid-feedback">Escribe un correo válido.</div>
               </div>
-              <div class="col-12">
+              <div class="col-md-12">
                 <label class="form-label">Teléfono</label>
-                <input class="form-control" required type="tel" placeholder="123-456-7890" id="phone-input" minlength="12">
-                <div class="invalid-feedback">Pon un número válido.</div>
-                </div> <!-- Correccion cierre div -->
-              <div class="col-md-6">
-                <label class="form-label">Contraseña</label>
-                <input class="form-control" name="password" minlength="6" required type="password">
-                <div class="invalid-feedback">Mínimo 6 caracteres.</div>
+                <input class="form-control" minlength="12" required type="tel" placeholder="123-456-7890" id="phone-input">
+                <div class="invalid-feedback">Escribe un número válido.</div>
               </div>
-              <div class="col-md-6">
-                <label class="form-label">Confirmar contraseña</label>
-                <input class="form-control" name="confirmPassword" minlength="6" required type="password">
-                <div class="invalid-feedback">Confirma tu contraseña.</div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Contraseña</label>
+                  <input class="form-control" name="password" minlength="8" required type="password" placeholder="Al menos ocho caracteres" id="input-password">
+                  <div class="invalid-feedback">Mínimo ocho caracteres, una mayúscula, un caracter especial y un número.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Confirmar contraseña</label>
+                  <input class="form-control" name="confirmPassword" minlength="8" required type="password" placeholder="Ejemplo1_" id="confirm-password">
+                  <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+                </div>
+              </div>
+              <div class="row g-3 mt-1">
+                <div class="col-md-6"><button id="BotonF" class="btn btn-mixe mt-1 w-100" type="submit">Crear
+                    cuenta</button>
+                </div>
+                <div class="col-md-6"><a id="BotonF2" class="btn btn-mixe mt-1 w-100"
+                    href="../Inicio de sesión/index.html">Ya tengo cuenta</a>
+                </div>
               </div>
             </div>
-            <button id="BotonF" class="btn btn-outline-mixe mt-3" type="submit">Crear cuenta</button>
-            <a id="BotonF2" class="btn btn-outline-mixe mt-3 ms-2" href="../Inicio de sesión/index.html">Ya tengo
-              cuenta</a>
           </form>
           <!-- Vista previa JSON -->
           <div id="jsonPreview" class="mt-4 d-none">
@@ -100,7 +109,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-
   <script defer="defer" src="../JavaScript/app.js"></script>
 </body>
 
