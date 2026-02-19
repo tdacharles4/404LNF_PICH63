@@ -65,6 +65,7 @@
                 <label class="form-label">Teléfono</label>
                 <input class="form-control" required type="tel" placeholder="123-456-7890" id="phone-input" minlength="12">
                 <div class="invalid-feedback">Pon un número válido.</div>
+                </div> <!-- Correccion cierre div -->
               <div class="col-md-6">
                 <label class="form-label">Contraseña</label>
                 <input class="form-control" name="password" minlength="6" required type="password">
@@ -80,6 +81,16 @@
             <a id="BotonF2" class="btn btn-outline-mixe mt-3 ms-2" href="../Inicio de sesión/index.html">Ya tengo
               cuenta</a>
           </form>
+          <!-- Vista previa JSON -->
+          <div id="jsonPreview" class="mt-4 d-none">
+            <h5 class="text-success">
+              <i class="bi bi-check-circle me-2"></i>Usuario Creado
+            </h5>
+            <p class="text-muted small">Modelo de datos generado:</p>
+            <pre class="bg-light p-3 rounded border"><code id="jsonOutput"></code></pre>
+          </div>
+          <!-- Vista previa JSON -->
+        </div> 
         </div>
       </div>
     </div>
