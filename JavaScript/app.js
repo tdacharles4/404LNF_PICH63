@@ -17,34 +17,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Validación Bootstrap forms
   document.querySelectorAll(".needs-validation").forEach(form => {
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
 
       if (!form.checkValidity()) {
-        e.stopPropagation();
         form.classList.add("was-validated");
         return;
       }
 
-      form.classList.add("was-validated");
-
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
+      const submitBtn = form.querySelector('button[type="submit"]');
       const status = document.getElementById("formStatus");
-      if (response.ok) {
-        status.textContent = "¡Mensaje enviado con éxito!";
-        status.classList.remove("visually-hidden");
-        form.reset();
-        form.classList.remove("was-validated");
-      } else {
-        status.textContent = "Hubo un error al enviar.";
-        status.classList.remove("visually-hidden");
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
       }
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar';
+        }
+        if (status) {
+          status.classList.remove('visually-hidden');
+        }
+        form.reset();
+        form.classList.remove('was-validated');
+        setTimeout(() => {
+          if (status) status.classList.add('visually-hidden');
+        }, 4000);
+      }, 1200);
     });
   });
 

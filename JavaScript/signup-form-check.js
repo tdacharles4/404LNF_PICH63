@@ -109,6 +109,28 @@ function checkPassword() {
 
 
 /* Comienzo de creación objetos tipo JSON */
+     
+    /* Zorayda - Creación objetos tipo JSON */
+    const form = document.getElementById('PaginaRegistro');
 
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        const usuarioJSON = {
+            nombre:   form.querySelector('[name="nombre"]').value.trim(),
+            apellido: form.querySelector('[name="apellido"]').value.trim(),
+            telefono: document.getElementById('phone-input').value.trim(),
+            email:    form.querySelector('[name="correo"]').value.trim().toLowerCase(),
+            password: form.querySelector('[name="password"]').value
+        };
 
-/* Fin de creación objetos tipo JSON */
+        const jsonPreview = document.getElementById("jsonPreview");
+        const jsonOutput  = document.getElementById("jsonOutput");
+
+        jsonOutput.textContent = JSON.stringify(usuarioJSON, null, 2);
+        jsonPreview.classList.remove("d-none");
+        jsonPreview.scrollIntoView({ behavior: "smooth", block: "start" });
+        /* Fin creación objetos tipo JSON */
+    });
+
+/* Fin validación de datos */
