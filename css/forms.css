@@ -10,12 +10,12 @@
     font-weight: 800;
 }
 
-.needs-validation{
+.needs-validation {
     background-color: var(--soft);
     padding: 1rem;
     border-radius: 8px;
 }
 
-#attachment{
-  background-color: var(--blanco);
+#attachment {
+    background-color: var(--blanco);
 }

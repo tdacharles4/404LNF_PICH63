@@ -13,6 +13,7 @@
 @import "checks-mixa.css";
 @import "map.css";
 @import "dividers.css";
+@import "country-dropdown.css";
 
 body{
   color: var(--text);
