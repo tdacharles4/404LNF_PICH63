@@ -139,36 +139,6 @@
       </div>
       </div>
 </div>
-
-  <!-- Se puede mover al js -->
-  <script>
-    (function () {
-      'use strict';
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
-      const submitBtn = document.getElementById('submitBtn');
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!form.checkValidity()) {
-          form.classList.add('was-validated');
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando...';
-
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Enviar';
-          status.classList.remove('visually-hidden');
-          form.reset();
-          form.classList.remove('was-validated');
-          setTimeout(() => status.classList.add('visually-hidden'), 4000);
-        }, 1200);
-      });
-    })();
-  </script>
 </main>
   <script src="/src/layouts/Footer.js"></script>
   <footer id="footer"></footer>
