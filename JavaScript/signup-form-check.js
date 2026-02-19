@@ -3,8 +3,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     checkPhoneNumber()
     checkName()
+    checkLastName()
     checkEmail()
     checkPassword()
+    checkConfirmPassword()
 });
 
 function checkPhoneNumber() {
@@ -28,13 +30,26 @@ function checkPhoneNumber() {
             formattedValue = formattedValue.substring(0, 7) + '-' + formattedValue.substring(7);
         }
         // 4. Update the input field
-        this.value = formattedValue;
+        this.value = formattedValue
+        if(this.value.length === 12){
+            this.classList.remove('is-invalid');
+            this.classList.add('is-valid');
+            return true;
+        }
+        else if(this.value === ''){
+            this.classList.remove('is-invalid');
+            this.classList.remove('is-valid');
+        }
+        else{
+            this.classList.remove('is-valid');
+            this.classList.add('is-invalid');
+        }
+
     });
 }
 
 function checkName() {
     const nameInput = document.getElementById('first-name');
-    const lastNameInput = document.getElementById('last-name');
 
     nameInput.addEventListener('input', function (e) {
         // El regex reemplaza todo lo que no sea un dígito por cadenas vacías
@@ -42,7 +57,12 @@ function checkName() {
         if (invalidCharacters.test(this.value)) {
             this.value = this.value.replace(invalidCharacters, '');
         }
+        return true;
     });
+}
+
+function checkLastName() {
+    const lastNameInput = document.getElementById('last-name');
 
     lastNameInput.addEventListener('input', function (e) {
         // El regex reemplaza todo lo que no sea un dígito por cadenas vacías
@@ -50,6 +70,7 @@ function checkName() {
         if (invalidCharacters.test(this.value)) {
             this.value = this.value.replace(invalidCharacters, '');
         }
+        return true;
     });
 }
 
@@ -57,17 +78,15 @@ function checkEmail() {
     const emailInput = document.getElementById('e-mail');
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    emailInput.addEventListener('blur', function (e) {
+    emailInput.addEventListener('blur', function (e) { // email vacío
         if (this.value.trim() === '') {
-            this.classList.remove('is-invalid');
-            this.classList.remove('is-valid');
+            
         }
-        else if (emailRegex.test(this.value.trim())) {
+        else if (emailRegex.test(this.value.trim())) {  // comprobación email válido
             this.classList.remove('is-invalid');
             this.classList.add('is-valid');
-            // Valid email
-        } else {
-            // Invalid email format
+            return true;
+        } else { // email inválido
             this.classList.add('is-invalid');
         }
     })
@@ -75,7 +94,6 @@ function checkEmail() {
 
 function checkPassword() {
     const passwordInput = document.getElementById('input-password');
-    const confirmPassword = document.getElementById('confirm-password');
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
     passwordInput.addEventListener('blur', function (e) {
@@ -86,21 +104,27 @@ function checkPassword() {
         else if (passwordRegex.test(this.value.trim())) {
             this.classList.remove('is-invalid');
             this.classList.add('is-valid');
-            // Valid email
+            return true;
         } else {
-            // Invalid email format
             this.classList.add('is-invalid');
         }
     })
 
-    confirmPassword.addEventListener('blur', function (e) {
-        if (this.value !== passwordInput.value) {
+    
+}
+
+function checkConfirmPassword(){
+    const firstPassword = document.getElementById('input-password');
+    const passwordInput = document.getElementById('confirm-password');
+    passwordInput.addEventListener('blur', function (e) {
+        if (this.value !== firstPassword.value) {
+            this.classList.remove('is-valid');
             this.classList.add('is-invalid');
         }
         else {
-            // Invalid email format
             this.classList.remove('is-invalid');
             this.classList.add('is-valid');
+            return true;
         }
     })
 }
@@ -109,28 +133,30 @@ function checkPassword() {
 
 
 /* Comienzo de creación objetos tipo JSON */
-     
-    /* Zorayda - Creación objetos tipo JSON */
-    const form = document.getElementById('PaginaRegistro');
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        
+/* Zorayda - Creación objetos tipo JSON */
+const form = document.getElementById('PaginaRegistro');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (checkPhoneNumber() && checkName() && checkLastName() && checkEmail() && checkPassword() && checkConfirmPassword()) {
         const usuarioJSON = {
-            nombre:   form.querySelector('[name="nombre"]').value.trim(),
+            nombre: form.querySelector('[name="nombre"]').value.trim(),
             apellido: form.querySelector('[name="apellido"]').value.trim(),
             telefono: document.getElementById('phone-input').value.trim(),
-            email:    form.querySelector('[name="correo"]').value.trim().toLowerCase(),
+            email: form.querySelector('[name="correo"]').value.trim().toLowerCase(),
             password: form.querySelector('[name="password"]').value
         };
 
         const jsonPreview = document.getElementById("jsonPreview");
-        const jsonOutput  = document.getElementById("jsonOutput");
+        const jsonOutput = document.getElementById("jsonOutput");
 
         jsonOutput.textContent = JSON.stringify(usuarioJSON, null, 2);
         jsonPreview.classList.remove("d-none");
         jsonPreview.scrollIntoView({ behavior: "smooth", block: "start" });
-        /* Fin creación objetos tipo JSON */
-    });
+    }
+    /* Fin creación objetos tipo JSON */
+});
 
 /* Fin validación de datos */
