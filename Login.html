@@ -26,6 +26,7 @@
 
   <!-- JS Functions. -->
   <script defer type="module" src="JavaScript/app.js"></script>
+  <script defer type="module" src="JavaScript/login-form-check.js"></script>
   
 </head>
 
@@ -42,19 +43,21 @@
     <div class="row g-3 justify-content-center">
       <div class="col-12 col-lg-6">
         <div class="card p-4">
-          <form class="needs-validation" novalidate="">
+          <form class="needs-validation" novalidate="" id="loginForm">
             <div class="mb-3">
               <label class="form-label">Correo</label>
-              <input class="form-control" required="" type="email"/>
-              <div class="invalid-feedback">Pon un correo válido.</div>
+              <input class="form-control" required type="email" placeholder="nombre@ejemplo.com" name="email">
+              <div class="invalid-feedback">Ingresa un correo válido.</div>
             </div>
             <div class="mb-3">
               <label class="form-label">Contraseña</label>
-              <input class="form-control" required="" type="password"/>
-              <div class="invalid-feedback">Pon tu contraseña.</div>
+              <input class="form-control" required type="password" placeholder="Ejemplo1_" name="password">
+              <div class="invalid-feedback">Ingresa tu contraseña.</div>
             </div>
             <button class="btn btn-outline-mixe" type="submit">Iniciar sesión</button>
-            <a class="btn btn-outline-mixe ms-2" href="../Página de Registro/index.html">Crear cuenta</a>
+            <a class="btn btn-outline-mixe ms-2" href="SignUp.html">Crear cuenta</a>
+            <div id="user-not-found"></div>
+
             <div class="small text-secondary mt-3">
               (Más adelante aquí metemos “Olvidé mi contraseña”.)
             </div>
