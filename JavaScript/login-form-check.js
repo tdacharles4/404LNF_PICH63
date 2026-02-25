@@ -12,10 +12,10 @@ form.addEventListener('submit', function (e) {
     const arrayData = [...data]
     const objectData = Object.fromEntries(arrayData)
 
-    const retrievedData = localStorage.getItem('users')
-    const retrievedObject = JSON.parse(retrievedData)
+    /*const retrievedData = localStorage.getItem('users')
+    const retrievedObject = JSON.parse(retrievedData)*/
 
-    const user = retrievedObject.find(user => user.email === objectData.email)
+    let user = localStorage.getItem(objectData.email)
 
     if (!user) {
         const feedbackElement = document.getElementById('user-not-found')
@@ -31,6 +31,7 @@ form.addEventListener('submit', function (e) {
     }
 
     else{
+        user = JSON.parse(user)
         if(user.password === objectData.password){
             console.log("sí es")
             window.location.href = "index.html"
