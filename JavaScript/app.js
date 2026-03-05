@@ -139,7 +139,10 @@ async function loadTeamMembers() {
   }
 }
 
-//Cargar productos 
+//Cargar productos y filtrar categorías
+
+let currentPage = 1;
+const productsPerPage = 6;
 
 async function loadProducts() {
 
@@ -148,36 +151,95 @@ async function loadProducts() {
     if (!cardsContainer) return;
 
     try {
-        const response = await fetch("../data/products.json");
-        const data = await response.json();
+      const response = await fetch("../data/products.json");
+      const data = await response.json();
 
-        const catalogo = data.catalogo;
-        const products = catalogo.productos;
+      const catalogo = data.catalogo;
+      const products = catalogo.productos;
 
-        cardsContainer.innerHTML = "";
+      const selectedMaterials = getSelectedMaterials();
+      const selectedRegion = getSelectedRegion();
+      const sortOption = document.getElementById("sortProducts")?.value;  
+      const searchText = document.getElementById("catalogSearch")?.value.toLowerCase().trim();    
 
-        products.forEach(product => {
+      let filteredProducts = products;
 
-    const material = catalogo.materiales.find(m => m.id === product.material_id);
-    const estado = catalogo.estados.find(e => e.id === product.estado_id);
+      const categoryFromURL = getCategoryFromURL();
 
-    const card = document.createElement("div");
-    card.classList.add("col-12", "col-md-6", "col-xl-4");
+      if (categoryFromURL) {
+        const categoriaSeleccionada = catalogo.categorias.find(
+          c => c.nombre.toLowerCase().trim() === decodeURIComponent(categoryFromURL).toLowerCase().trim()
+        );
 
-    card.innerHTML = `
-        <div class="card h-100">
-            <img src="${product.imagenes}" alt="${product.nombre}">
-            <div class="p-3">                    
-                <h5 class="mb-1">${product.nombre}</h5>
-                <div class="muted mb-2">
-                    ${estado?.nombre || ""} · ${material?.nombre || ""}
-                </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="price">$${product.precio}</div>
-                    <button class="btn btn-mixe btn-sm">Añadir</button>
-                </div>
-            </div>
-        </div>
+        if (categoriaSeleccionada) {
+          filteredProducts = filteredProducts.filter(product =>
+            product.categoria_id === categoriaSeleccionada.id
+          );
+        }
+      }
+
+      if (selectedMaterials.length > 0) {
+        filteredProducts = filteredProducts.filter(product =>
+          selectedMaterials.includes(product.material_id)
+        );
+      }
+
+      if (selectedRegion !== "Todos") {
+        filteredProducts = filteredProducts.filter(product => {
+          const estado = catalogo.estados.find(e => e.id === product.estado_id);
+          return estado && estado.nombre === selectedRegion;
+        });
+      }
+
+      if (searchText) {
+        filteredProducts = filteredProducts.filter(product =>
+          product.nombre.toLowerCase().includes(searchText) ||
+          product.descripcion.toLowerCase().includes(searchText)
+        );
+      }
+
+      if (sortOption === "recientes") {
+          filteredProducts.sort((a, b) => b.id - a.id);
+      }
+      if (sortOption === "precio-asc") {
+          filteredProducts.sort((a, b) => a.precio - b.precio);
+      }
+      if (sortOption === "precio-desc") {
+          filteredProducts.sort((a, b) => b.precio - a.precio);
+      }            
+
+      const start = (currentPage - 1) * productsPerPage;
+      if (start >= filteredProducts.length) {
+        currentPage = 1;
+      }
+      const end = start + productsPerPage;
+      const paginatedProducts = filteredProducts.slice(start, end);
+
+      cardsContainer.innerHTML = "";
+
+      paginatedProducts.forEach(product => {
+
+      const material = catalogo.materiales.find(m => m.id === product.material_id);
+      const estado = catalogo.estados.find(e => e.id === product.estado_id);
+      const categoria = catalogo.categorias.find(c => c.id === product.categoria_id);
+
+      const card = document.createElement("div");
+      card.classList.add("col-12", "col-md-6", "col-xl-4");
+
+      card.innerHTML = `
+          <div class="card h-100">
+              <img src="${product.imagenes}" alt="${product.nombre}">
+              <div class="p-3">                    
+                  <h5 class="mb-1">${product.nombre}</h5>
+                  <div class="muted mb-2">
+                      ${categoria?.nombre || ""} · ${estado?.nombre || ""} · ${material?.nombre || ""}
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                      <div class="price">$${product.precio}</div>
+                      <button class="btn btn-mixe btn-sm">Añadir</button>
+                  </div>
+              </div>
+          </div>
     `;
 
     cardsContainer.appendChild(card);
@@ -186,4 +248,74 @@ async function loadProducts() {
         console.error("Error cargando productos:", error);
     }
 }
-loadProducts();
+
+function getSelectedMaterials() {
+    const checked = document.querySelectorAll(".material-filter:checked");
+    return Array.from(checked).map(cb => Number(cb.value));
+}
+function getSelectedRegion() {
+    const region = document.getElementById("regionFilter");
+    return region ? region.value : "Todos";
+}
+function getCategoryFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("categoria");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadProducts();
+
+    const sortSelect = document.getElementById("sortProducts");
+    if (sortSelect) {
+        sortSelect.addEventListener("change", () => {
+            currentPage = 1;
+            loadProducts();
+        });
+    }
+
+    const paginationLinks = document.querySelectorAll(".pagination .page-link");
+    if (paginationLinks.length > 0) {
+        paginationLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const page = parseInt(link.textContent);
+                if (!isNaN(page)) {
+                    currentPage = page;
+                    loadProducts();
+                }
+            });
+        });
+    }
+
+    const applyBtn = document.getElementById("applyFilters");
+    if (applyBtn) {
+        applyBtn.addEventListener("click", () => {
+        currentPage = 1;
+        loadProducts();
+    });}
+
+    const clearBtn = document.getElementById("clearFilters");
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        document.querySelectorAll(".material-filter").forEach(cb => cb.checked = false);
+        const regionSelect = document.getElementById("regionFilter");
+        if (regionSelect) {
+          regionSelect.value = "Todos";
+        }
+        window.history.replaceState({}, document.title, "Products.html");
+        currentPage = 1;
+        loadProducts();
+      });
+    }
+
+    const searchInput = document.getElementById("catalogSearch");
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        currentPage = 1;
+        loadProducts();
+      });
+    }
+
+});
