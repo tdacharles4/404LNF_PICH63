@@ -236,7 +236,12 @@ async function loadProducts() {
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
                       <div class="price">$${product.precio}</div>
-                      <button class="btn btn-mixe btn-sm">Añadir</button>
+                      <button class="btn btn-outline-success cart-btn-animated" type="button"> <!--carrito push 06/02-->
+                          <span class="cart-icon"> <!-- Push Carrito 12/02 BootStrap to Font-Awesome -->
+                              <i class="fa-solid fa-cart-shopping"></i>
+                          </span>
+                          <span class="cart-text">Add to cart</span>
+                      </button>
                   </div>
               </div>
           </div>
