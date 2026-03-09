@@ -43,10 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
             Productos
           </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">Textiles</a></li>
-                                <li><a class="dropdown-item" href="#!">Cerámica</a></li>
-                                <li><a class="dropdown-item" href="#!">Joyería</a></li>
-                                <li><a class="dropdown-item" href="#!">Alebrijes</a></li>
+                                <li><a class="dropdown-item" href="/Products.html?categoria=Alebrijes">Alebrijes</a></li>
+                                <li><a class="dropdown-item" href="/Products.html?categoria=Joyeria">Joyería</a></li>
+                                <li><a class="dropdown-item" href="/Products.html?categoria=Ropa">Ropa</a></li>
+                                <li><a class="dropdown-item" href="/Products.html?categoria=Muebles">Muebles</a></li>
+                                <li><a class="dropdown-item" href="/Products.html?categoria=Decoracion">Decoración</a></li>
                             </ul>
                         </li>
                     </ul>

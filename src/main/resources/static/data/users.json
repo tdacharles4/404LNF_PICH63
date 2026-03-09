@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "Esteban",
+    "apellido": "Mercado",
+    "email": "esteban@mercado.com",
+    "password": "Mercado1!"
+  },
+  {
+    "nombre": "Ivan",
+    "apellido": "Arrieta",
+    "email": "ivan@arrieta.com",
+    "password": "Arrieta2!"
+  }
+]
