@@ -1,5 +1,5 @@
 // MIXE | ARTESANÍAS - JS básico (catálogo + carrito fake + validaciones)
-
+import { getAllProducts } from "../../services/api.js";
 document.addEventListener("DOMContentLoaded", () => {
   // Filtro rápido del catálogo (por texto)
   const search = document.querySelector("#catalogSearch");
@@ -151,12 +151,17 @@ async function loadProducts() {
     if (!cardsContainer) return;
 
     try {
-      const response = await fetch("../data/products.json");
+/*    const response = await fetch("../data/products.json");
       const data = await response.json();
 
       const catalogo = data.catalogo;
       const products = catalogo.productos;
-
+*/
+      const [products, staticData] = await Promise.all([
+              getAllProducts(),
+              fetch("../data/products.json").then(res => res.json())
+          ]);
+      const catalogo = staticData.catalogo;
       const selectedMaterials = getSelectedMaterials();
       const selectedRegion = getSelectedRegion();
       const sortOption = document.getElementById("sortProducts")?.value;  

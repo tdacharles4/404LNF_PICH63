@@ -1,4 +1,4 @@
-
+import { addProduct } from '../services/api.js';
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('productoForm');
     const alertContainer = document.getElementById('alertContainer');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Maneja el envío del formulario
      */
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', async   function(event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -190,9 +190,32 @@ document.addEventListener('DOMContentLoaded', function() {
             form.classList.add('was-validated');
             return;
         }
+        // Recolectamos la info del formulario
+        const formData = new FormData(form);
+        const productData = Object.fromEntries(formData.entries());
+
+        // Convertimos la data al formato de la funcion addProduct()
+        productData.precio = parseFloat(productData.precio);
+        productData.stock = parseInt(productData.stock);
+        productData.categoria_id = parseInt(productData.categoria_id);
+        productData.material_id = parseInt(productData.material_id);
+        productData.estado_id = parseInt(productData.procedencia_id);
+        productData.activo = document.getElementById('activo').checked;
+
+        // Llamamos la funcion de api envuelta en un try-catch
+        try {
+            console.log("Sending data to backend:", productData);
+            const newProduct = await addProduct(productData);
+
+            mostrarAlerta(`Producto "${newProduct.nombre}" agregado con éxito.`, 'success');
+            form.reset();
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            mostrarAlerta("Error al agregar el producto.");
+        }
 
         // Si es válido, generar el JSON
-        const productoJSON = generarModeloJSON(resultado.datos);
+        /* const productoJSON = generarModeloJSON(resultado.datos);
 
         // Mostrar alerta de éxito
         mostrarAlerta('¡Producto agregado correctamente!', 'success');
@@ -210,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
             form.classList.remove('was-validated');
         }, 2000); */
     });
+
 
     /**
      * Limpiar alertas y preview al resetear el formulario
