@@ -1,0 +1,25 @@
+/* SECTIONS  */
+.section-pad {
+    padding: 64px 0;
+}
+
+.bg-soft {
+    background: var(--soft);
+}
+
+.eyebrow {
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-size: .85rem;
+    color: var(--green-dark);
+    font-weight: 800;
+}
+
+.story-subtitle {
+    max-width: 780px;
+}
+
+/* Responsive */
+@media (max-width: 575px){
+    .section-pad{ padding: 44px 0; }
+}

@@ -1,0 +1,5 @@
+/* Sidebar filtros */
+.filters {
+    position: sticky;
+    top: 90px;
+}

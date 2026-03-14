@@ -1,0 +1,29 @@
+@import "variables.css";
+@import "navbar.css";
+@import "buttons.css";
+@import "footer.css";
+@import "flip-cards.css";
+@import "forms.css";
+@import "hero-carrousel.css";
+@import "cart.css";
+@import "section-pads.css";
+@import "mixa-alerts.css";
+@import "blob-wraps.css";
+@import "cards-mixa.css";
+@import "checks-mixa.css";
+@import "map.css";
+@import "dividers.css";
+
+body{
+  color: var(--text);
+  background: #fff;
+  padding-top: 85px; /* Ajusta este valor según la altura de tu navbar */
+}
+
+/* ====== Estilos añadidos desde ARTESANÍAS (adaptados) ====== */
+html, body { height: 100%; }
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: #f6f6f6;
+}

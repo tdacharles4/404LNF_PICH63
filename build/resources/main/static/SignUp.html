@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <!-- Requisitos. -->
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>MIXA | ARTESANÍAS - Registro</title>
+
+  <!-- Bootstrap CSS. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Bootstrap JS. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- FontAwesome Icons. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- CSS Propio. -->
+  <link href="../css/styles.css" rel="stylesheet" />
+
+  <!-- JS Components. -->
+  <script defer type="module" src="/src/layouts/Navbar.js"></script>
+  <script defer type="module" src="/src/layouts/Footer.js"></script>
+  <script defer type="module" src="/src/layouts/Carrito.js"></script>
+
+  <!-- JS Functions. -->
+  <script defer type="module" src="JavaScript/app.js"></script>
+  <!-- Validación de datos de formulario -->
+  <script defer type="module" src="JavaScript/signup-form-check.js"> </script>
+
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <!--Carrito 06/02-->
+  <shopping-cart></shopping-cart>
+  <!--Carrito 06/02-->
+
+
+  <main class="container my-4">
+    <h2 class="section-title mb-1">Página de registro</h2>
+    <div class="section-subtitle mb-4">Crea tu cuenta en MIXA</div>
+    <div class="row g-3 justify-content-center">
+      <div class="col-12 col-lg-7">
+        <div class="card p-4">
+          <form id="PaginaRegistro" class="needs-validation" novalidate="">
+            <div class="">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Nombre</label>
+                  <input class="form-control" name="nombre" type="text" required placeholder="Juan" id="first-name">
+                  <div class="invalid-feedback">Escribe tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Apellido</label>
+                  <input class="form-control" name="apellido" type="text" required placeholder="Pérez" id="last-name">
+                  <div class="invalid-feedback">Escribe tu apellido.</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">Correo</label>
+                <input class="form-control" name="correo" required type="email" placeholder="nombre@ejemplo.com" id="e-mail">
+                <div class="invalid-feedback">Escribe un correo válido.</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">Teléfono</label>
+                <input class="form-control" minlength="12" required type="tel" placeholder="123-456-7890" id="phone-input">
+                <div class="invalid-feedback">Escribe un número válido.</div>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Contraseña</label>
+                  <input class="form-control" name="password" minlength="8" required type="password" placeholder="Al menos ocho caracteres" id="input-password">
+                  <div class="invalid-feedback">Mínimo ocho caracteres, una mayúscula, un caracter especial y un número.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Confirmar contraseña</label>
+                  <input class="form-control" name="confirmPassword" minlength="8" required type="password" placeholder="Ejemplo1_" id="confirm-password">
+                  <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+                </div>
+              </div>
+              <div class="row g-3 mt-1">
+                <div class="col-md-6"><button id="BotonF" class="btn btn-mixe mt-1 w-100" type="submit">Crear
+                    cuenta</button>
+                </div>
+                <div class="col-md-6"><a id="BotonF2" class="btn btn-mixe mt-1 w-100"
+                    href="../Inicio de sesión/index.html">Ya tengo cuenta</a>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- Vista previa JSON -->
+          <div id="jsonPreview" class="mt-4 d-none">
+            <h5 class="text-success">
+              <i class="bi bi-check-circle me-2"></i>Usuario Creado
+            </h5>
+            <p class="text-muted small">Modelo de datos generado:</p>
+            <pre class="bg-light p-3 rounded border"><code id="jsonOutput"></code></pre>
+          </div>
+          <!-- Vista previa JSON -->
+        </div> 
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+</body>
+
+</html>
